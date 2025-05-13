@@ -86,7 +86,7 @@ export default function SpotifyStats() {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {[...Array(2)].map((_, i) => (
-          <div key={i} className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 animate-pulse h-24"></div>
+          <div key={i} className="bg-gray-100 dark:bg-zinc-800 rounded-lg p-4 animate-pulse h-24"></div>
         ))}
       </div>
     );
@@ -96,9 +96,9 @@ export default function SpotifyStats() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <AnimatedSection delay={0.1} className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
+      <AnimatedSection delay={0.1} className="bg-gray-100 dark:bg-zinc-800 rounded-lg p-4">
         <div className="flex flex-col h-full">
-          <div className="text-sm text-gray-500 dark:text-gray-400 mb-2 flex items-center gap-1">
+          <div className="text-sm text-gray-500 dark:text-zinc-400 mb-2 flex items-center gap-1">
             <Music className="h-4 w-4" />
             <span>Top Artist</span>
           </div>
@@ -110,9 +110,9 @@ export default function SpotifyStats() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection delay={0.2} className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
+      <AnimatedSection delay={0.2} className="bg-gray-100 dark:bg-zinc-800 rounded-lg p-4">
         <div className="flex flex-col h-full">
-          <div className="text-sm text-gray-500 dark:text-gray-400 mb-2 flex items-center gap-1">
+          <div className="text-sm text-gray-500 dark:text-zinc-400 mb-2 flex items-center gap-1">
             <Music className="h-4 w-4" />
             <span>Top Track</span>
           </div>

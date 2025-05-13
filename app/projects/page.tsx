@@ -42,7 +42,7 @@ export default function Projects() {
   const otherProjects = projects.filter((project) => !project.featured)
 
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-950 text-black dark:text-white">
+    <main className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
       <div className="container max-w-6xl mx-auto px-4 py-16">
         <PageHeader title="Projects" />
 
@@ -53,7 +53,7 @@ export default function Projects() {
               {featuredProjects.map((project, index) => (
                 <AnimatedSection key={project.id} delay={index * 0.2}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div className="relative aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
+                    <div className="relative aspect-video bg-gray-100 dark:bg-zinc-800 rounded-lg overflow-hidden">
                       <Image
                         src={project.image || "/placeholder.svg?height=600&width=800"}
                         alt={project.title}
@@ -63,13 +63,13 @@ export default function Projects() {
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                      <p className="text-gray-600 dark:text-gray-300 mb-6">{project.description}</p>
+                      <p className="text-gray-600 dark:text-zinc-300 mb-6">{project.description}</p>
 
                       <div className="flex flex-wrap gap-2 mb-6">
                         {project.technologies.map((tech, idx) => (
                           <span
                             key={idx}
-                            className="text-sm text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded"
+                            className="text-sm text-gray-600 dark:text-zinc-300 bg-gray-100 dark:bg-zinc-800 px-2 py-1 rounded"
                           >
                             {tech}
                           </span>
@@ -81,7 +81,7 @@ export default function Projects() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 border border-gray-300 dark:border-gray-600 px-4 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                          className="flex items-center gap-2 border border-gray-300 dark:border-zinc-600 px-4 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                         >
                           <Github className="h-4 w-4" /> Code
                         </Link>
@@ -106,7 +106,7 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {otherProjects.map((project, index) => (
             <AnimatedSection key={project.id} delay={index * 0.1}>
-              <div className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden hover:shadow-sm transition-shadow h-full flex flex-col">
+              <div className="border border-gray-200 dark:border-zinc-800 rounded-lg overflow-hidden hover:shadow-sm transition-shadow h-full flex flex-col">
                 <div className="relative aspect-video">
                   <Image
                     src={project.image || "/placeholder.svg?height=600&width=800"}
@@ -117,13 +117,13 @@ export default function Projects() {
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">{project.description}</p>
+                  <p className="text-gray-600 dark:text-zinc-300 mb-4 flex-grow">{project.description}</p>
 
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="text-sm text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded"
+                        className="text-sm text-gray-600 dark:text-zinc-300 bg-gray-100 dark:bg-zinc-800 px-2 py-1 rounded"
                       >
                         {tech}
                       </span>
@@ -135,7 +135,7 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm flex items-center gap-1 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
+                      className="text-sm flex items-center gap-1 text-gray-600 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors"
                     >
                       <Github className="h-4 w-4" /> Code
                     </Link>
@@ -143,7 +143,7 @@ export default function Projects() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm flex items-center gap-1 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
+                      className="text-sm flex items-center gap-1 text-gray-600 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors"
                     >
                       <ExternalLink className="h-4 w-4" /> Demo
                     </Link>

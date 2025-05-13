@@ -43,7 +43,7 @@ export default function ExperienceTimeline() {
         <AnimatedSection key={index} delay={index * 0.2} className="mb-12 relative">
 
           {index < experiences.length - 1 && (
-            <div className="absolute left-6 top-12 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700"></div>
+            <div className="absolute left-6 top-12 bottom-0 w-0.5 bg-gray-200 dark:bg-zinc-700"></div>
           )}
 
           <div className="flex gap-6">
@@ -55,7 +55,7 @@ export default function ExperienceTimeline() {
 
             <div className="flex-grow">
               <h3 className="text-xl font-bold">{experience.title}</h3>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mt-1 mb-3 text-gray-600 dark:text-gray-300">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mt-1 mb-3 text-gray-600 dark:text-zinc-300">
                 <div className="flex items-center gap-1">
                   <Building2 className="h-4 w-4" />
                   <span>{experience.company}</span>
@@ -66,13 +66,13 @@ export default function ExperienceTimeline() {
                 </div>
               </div>
 
-              <p className="text-gray-700 dark:text-gray-300 mb-4">{experience.description}</p>
+              <p className="text-gray-700 dark:text-zinc-300 mb-4">{experience.description}</p>
 
               <div className="flex flex-wrap gap-2">
                 {experience.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300"
+                    className="bg-gray-100 dark:bg-zinc-800 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-zinc-300"
                   >
                     {skill}
                   </span>

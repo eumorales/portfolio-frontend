@@ -73,7 +73,7 @@ const getCategoryColorClass = (category: string) => {
     case "List":
       return "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200"
     default:
-      return "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
+      return "bg-gray-100 text-gray-800 dark:bg-zinc-700 dark:text-zinc-200"
   }
 }
 
@@ -81,14 +81,14 @@ export default function Blog() {
   const groupedPosts = groupPostsByYear(blogPosts)
 
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-950 text-black dark:text-white scroll-smooth">
+    <main className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white scroll-smooth">
       <div className="container max-w-4xl mx-auto px-4 py-16">
         <PageHeader title="Blog" />
 
         <div className="space-y-16">
           {groupedPosts.map(({ year, posts }) => (
             <div key={year} className="space-y-12">
-              <h2 className="text-3xl font-bold border-b border-gray-200 dark:border-gray-800 pb-4">{year}</h2>
+              <h2 className="text-3xl font-bold border-b border-gray-200 dark:border-zinc-800 pb-4">{year}</h2>
 
               {posts.map((post, index) => (
                 <AnimatedSection key={post.id} delay={index * 0.1}>
@@ -98,14 +98,14 @@ export default function Blog() {
                         <span className={`px-2 py-0.5 text-xs rounded-full ${getCategoryColorClass(post.category)}`}>
                           {post.category}
                         </span>
-                        <span className="flex items-center gap-1 px-2 py-0.5 text-xs rounded-full bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200">
+                        <span className="flex items-center gap-1 px-2 py-0.5 text-xs rounded-full bg-gray-100 text-gray-800 dark:bg-zinc-700 dark:text-zinc-200">
                           <Globe className="h-3 w-3" />
                           {post.language}
                         </span>
                         {post.tags.map((tag, idx) => (
                           <span
                             key={idx}
-                            className="px-2 py-0.5 text-xs rounded-full bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
+                            className="px-2 py-0.5 text-xs rounded-full bg-gray-100 text-gray-800 dark:bg-zinc-700 dark:text-zinc-200"
                           >
                             #{tag}
                           </span>
@@ -116,7 +116,7 @@ export default function Blog() {
                         {post.title}
                       </h3>
 
-                      <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
+                      <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-zinc-400 mb-4">
                         <div className="flex items-center gap-1">
                           <Calendar className="h-4 w-4" />
                           <span>{post.date}</span>
@@ -127,7 +127,7 @@ export default function Blog() {
                         </div>
                       </div>
 
-                      <p className="text-gray-600 dark:text-gray-300 mb-4">{post.excerpt}</p>
+                      <p className="text-gray-600 dark:text-zinc-300 mb-4">{post.excerpt}</p>
 
                       <div className="text-black dark:text-white font-medium underline-offset-4 group-hover:underline">
                         Read more
@@ -136,7 +136,7 @@ export default function Blog() {
                   </article>
 
                   {index < posts.length - 1 && (
-                    <div className="border-b border-gray-100 dark:border-gray-800 mt-12"></div>
+                    <div className="border-b border-gray-100 dark:border-zinc-800 mt-12"></div>
                   )}
                 </AnimatedSection>
               ))}

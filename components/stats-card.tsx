@@ -17,7 +17,7 @@ export default function StatsCard({ icon, title, stats, delay = 0 }: StatsCardPr
   return (
     <AnimatedSection
       delay={delay}
-      className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow"
+      className="bg-white dark:bg-zinc-800 p-6 rounded-lg border border-gray-200 dark:border-zinc-700 hover:shadow-md transition-shadow"
     >
       <div className="flex items-center gap-2 mb-4">
         {icon}
@@ -28,7 +28,7 @@ export default function StatsCard({ icon, title, stats, delay = 0 }: StatsCardPr
         {stats.map((stat, index) => (
           <div key={index} className="text-center">
             <p className="text-xl font-bold">{stat.value}</p>
-            <p className="text-sm text-gray-500 dark:text-gray-400">{stat.label}</p>
+            <p className="text-sm text-gray-500 dark:text-zinc-400">{stat.label}</p>
           </div>
         ))}
       </div>

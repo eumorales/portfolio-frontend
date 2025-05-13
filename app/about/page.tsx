@@ -38,7 +38,7 @@ const experiences = [
 
 export default function About() {
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-950 text-black dark:text-white scroll-smooth">
+    <main className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white scroll-smooth">
       <div className="container max-w-4xl mx-auto px-4 py-16">
         <PageHeader title="About Me" />
 
@@ -58,14 +58,14 @@ export default function About() {
             <div className="flex flex-col">
               
               <h2 className="text-2xl font-bold mb-1">Gilberto Morales</h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">Fullstack Developer</p>
+              <p className="text-gray-600 dark:text-zinc-300 mb-4">Fullstack Developer</p>
 
               <div className="flex gap-4 mb-6">
                 <Link href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-                  <Github className="h-5 w-5 hover:text-gray-600 dark:hover:text-gray-300" />
+                  <Github className="h-5 w-5 hover:text-gray-600 dark:hover:text-zinc-300" />
                 </Link>
                 <Link href="https://instagram.com/gilbertomrls" target="_blank" rel="noopener noreferrer">
-                  <Instagram className="h-5 w-5 hover:text-gray-600 dark:hover:text-gray-300" />
+                  <Instagram className="h-5 w-5 hover:text-gray-600 dark:hover:text-zinc-300" />
                 </Link>
               </div>
 
@@ -86,7 +86,7 @@ export default function About() {
 
         <AnimatedSection className="mb-12">
           <h2 className="text-2xl font-bold mb-6">About</h2>
-          <div className="space-y-4 text-gray-600 dark:text-gray-300">
+          <div className="space-y-4 text-gray-600 dark:text-zinc-300">
             <p>
               Hello! I'm a fullstack developer passionate about building engaging and functional web experiences. My journey with programming began at a young age, sparked by a curiosity to create plugins for games — and that passion has only grown since then.
             </p>
@@ -115,7 +115,7 @@ export default function About() {
             {experiences.map((experience, index) => (
               <div key={index} className="mb-12 relative">
                 {index < experiences.length - 1 && (
-                  <div className="absolute left-6 top-12 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700"></div>
+                  <div className="absolute left-6 top-12 bottom-0 w-0.5 bg-gray-200 dark:bg-zinc-700"></div>
                 )}
 
                 <div className="flex gap-6">
@@ -127,7 +127,7 @@ export default function About() {
 
                   <div className="flex-grow">
                     <h3 className="text-xl font-bold">{experience.title}</h3>
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mt-1 mb-3 text-gray-600 dark:text-gray-300">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mt-1 mb-3 text-gray-600 dark:text-zinc-300">
                       <div className="flex items-center gap-1">
                         <Building2 className="h-4 w-4" />
                         <span>{experience.company}</span>
@@ -138,13 +138,13 @@ export default function About() {
                       </div>
                     </div>
 
-                    <p className="text-gray-700 dark:text-gray-300 mb-4">{experience.description}</p>
+                    <p className="text-gray-700 dark:text-zinc-300 mb-4">{experience.description}</p>
 
                     <div className="flex flex-wrap gap-2">
                       {experience.skills.map((skill, skillIndex) => (
                         <span
                           key={skillIndex}
-                          className="bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-gray-300"
+                          className="bg-gray-100 dark:bg-zinc-800 px-3 py-1 rounded-full text-sm text-gray-700 dark:text-zinc-300"
                         >
                           {skill}
                         </span>

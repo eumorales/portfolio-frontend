@@ -30,7 +30,7 @@ export default function MobileMenu() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-16 left-0 right-0 bg-white dark:bg-gray-900 shadow-lg z-50 border-b border-gray-200 dark:border-gray-700"
+            className="absolute top-16 left-0 right-0 bg-white dark:bg-zinc-900 shadow-lg z-50 border-b border-gray-200 dark:border-zinc-700"
           >
             <nav className="flex flex-col p-4 space-y-4">
               <Link

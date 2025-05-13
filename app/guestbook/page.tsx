@@ -59,12 +59,12 @@
 //   }
 
 //   return (
-//     <main className="min-h-screen bg-white dark:bg-gray-950 text-black dark:text-white">
+//     <main className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
 //       <div className="container max-w-3xl mx-auto px-4 py-16">
 //         <PageHeader title="Guestbook" />
 
 //         <AnimatedSection className="mb-8">
-//           <p className="text-gray-600 dark:text-gray-300 mb-6">
+//           <p className="text-gray-600 dark:text-zinc-300 mb-6">
 //             Leave a comment, feedback, or just say hi! Sign in with GitHub to leave a message.
 //           </p>
 
@@ -83,7 +83,7 @@
 //                   value={message}
 //                   onChange={(e) => setMessage(e.target.value)}
 //                   placeholder="Your message..."
-//                   className="w-full border border-gray-300 dark:border-gray-600 rounded-md p-3 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
+//                   className="w-full border border-gray-300 dark:border-zinc-600 rounded-md p-3 bg-white dark:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
 //                   rows={3}
 //                   required
 //                 />
@@ -105,13 +105,13 @@
 //           <h2 className="text-xl font-bold">Recent messages</h2>
 
 //           {entries.length === 0 ? (
-//             <p className="text-gray-500 dark:text-gray-400 italic">No messages yet. Be the first to sign!</p>
+//             <p className="text-gray-500 dark:text-zinc-400 italic">No messages yet. Be the first to sign!</p>
 //           ) : (
 //             entries.map((entry, index) => (
 //               <AnimatedSection
 //                 key={entry.id}
 //                 delay={index * 0.1}
-//                 className="border-b border-gray-100 dark:border-gray-800 pb-6 last:border-0"
+//                 className="border-b border-gray-100 dark:border-zinc-800 pb-6 last:border-0"
 //               >
 //                 <div className="flex gap-4">
 //                   <div className="flex-shrink-0 w-10 h-10 relative rounded-full overflow-hidden">
@@ -120,9 +120,9 @@
 //                   <div className="flex-grow">
 //                     <div className="flex justify-between items-start mb-1">
 //                       <h3 className="font-medium">{entry.name}</h3>
-//                       <span className="text-sm text-gray-500 dark:text-gray-400">{entry.createdAt}</span>
+//                       <span className="text-sm text-gray-500 dark:text-zinc-400">{entry.createdAt}</span>
 //                     </div>
-//                     <p className="text-gray-600 dark:text-gray-300">{entry.message}</p>
+//                     <p className="text-gray-600 dark:text-zinc-300">{entry.message}</p>
 //                   </div>
 //                 </div>
 //               </AnimatedSection>
@@ -141,7 +141,7 @@ import Image from "next/image"
 
 export default function Guestbook() {
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-950 text-black dark:text-white">
+    <main className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
       <div className="container max-w-4xl mx-auto px-4 py-16">
         <Link href="/" className="inline-flex items-center gap-2 mb-8 hover:underline">
           <ArrowLeft className="h-4 w-4" /> Back to home
@@ -151,7 +151,7 @@ export default function Guestbook() {
           <AnimatedText text="Coming Soon" className="text-6xl md:text-6xl mt-12 font-black mb-6" />
           
           <AnimatedSection delay={0.2} className="mb-12">
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-zinc-300 max-w-2xl mx-auto">
               I'm working on something exciting that will be available here soon.
             </p>
           </AnimatedSection>
@@ -168,7 +168,7 @@ export default function Guestbook() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.5} className="mt-4">
-            <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400">
+            <div className="flex items-center gap-2 text-gray-500 dark:text-zinc-400">
               <Calendar className="h-5 w-5" />
               <p>Expected launch: H2 2025</p>
             </div>

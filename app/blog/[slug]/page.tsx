@@ -184,7 +184,7 @@ const getCategoryColorClass = (category: string) => {
     case "List":
       return "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200"
     default:
-      return "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
+      return "bg-gray-100 text-gray-800 dark:bg-zinc-700 dark:text-zinc-200"
   }
 }
 
@@ -194,7 +194,7 @@ export default async function BlogPost({ params }: BlogPostParams) {
 
   if (!post) {
     return (
-      <main className="min-h-screen bg-white dark:bg-gray-950 text-black dark:text-white">
+      <main className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
         <div className="container mx-auto px-4 py-16">
           <Link href="/blog" className="inline-flex items-center gap-2 mb-8 hover:underline">
             <ArrowLeft className="h-4 w-4" /> Back to blog
@@ -209,7 +209,7 @@ export default async function BlogPost({ params }: BlogPostParams) {
   }
 
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-950 text-black dark:text-white">
+    <main className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
       <div className="container mx-auto px-4 py-16">
         <Link href="/blog" className="inline-flex items-center gap-2 mb-8 hover:underline">
           <ArrowLeft className="h-4 w-4" /> Back to blog
@@ -221,7 +221,7 @@ export default async function BlogPost({ params }: BlogPostParams) {
               <span className={`px-2 py-1 text-sm rounded-full ${getCategoryColorClass(post.category)}`}>
                 {post.category}
               </span>
-              <span className="flex items-center gap-1 px-2 py-1 text-sm rounded-full bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200">
+              <span className="flex items-center gap-1 px-2 py-1 text-sm rounded-full bg-gray-100 text-gray-800 dark:bg-zinc-700 dark:text-zinc-200">
                 <Globe className="h-4 w-4" />
                 {post.language}
               </span>
@@ -229,7 +229,7 @@ export default async function BlogPost({ params }: BlogPostParams) {
 
             <h1 className="text-4xl md:text-5xl font-black mb-6">{post.title}</h1>
 
-            <div className="flex items-center gap-4 text-gray-500 dark:text-gray-400 mb-6">
+            <div className="flex items-center gap-4 text-gray-500 dark:text-zinc-400 mb-6">
               <div className="flex items-center gap-1">
                 <Calendar className="h-4 w-4" />
                 <span>{post.date}</span>
@@ -244,7 +244,7 @@ export default async function BlogPost({ params }: BlogPostParams) {
               {post.tags.map((tag, idx) => (
                 <span
                   key={idx}
-                  className="px-2 py-1 text-sm rounded-full bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
+                  className="px-2 py-1 text-sm rounded-full bg-gray-100 text-gray-800 dark:bg-zinc-700 dark:text-zinc-200"
                 >
                   #{tag}
                 </span>

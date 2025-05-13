@@ -11,7 +11,7 @@ export default function PageHeader({ title, backLink = "/", backLinkText = "Back
   return (
     <div className="mb-12">
       {backLink && (
-        <Link href={backLink} className="inline-block mb-6 text-sm text-gray-500 dark:text-gray-400 hover:underline">
+        <Link href={backLink} className="inline-block mb-6 text-sm text-gray-500 dark:text-zinc-400 hover:underline">
           <div className="flex items-center gap-1">
             <ArrowLeft className="h-4 w-4" />
             <span>{backLinkText}</span>
