@@ -41,7 +41,7 @@ export default function ExperienceTimeline() {
     <div className="max-w-3xl mx-auto">
       {experiences.map((experience, index) => (
         <AnimatedSection key={index} delay={index * 0.2} className="mb-12 relative">
-          {/* Timeline connector */}
+
           {index < experiences.length - 1 && (
             <div className="absolute left-6 top-12 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700"></div>
           )}

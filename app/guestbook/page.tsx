@@ -19,24 +19,10 @@
 // const sampleEntries: GuestbookEntry[] = [
 //   {
 //     id: "1",
-//     name: "John Doe",
+//     name: "Gilberto",
 //     avatarUrl: "/placeholder.svg?height=40&width=40",
-//     message: "Great work on the portfolio! The animations are smooth and the design is clean.",
+//     message: "Mensagem de teste",
 //     createdAt: "2 days ago",
-//   },
-//   {
-//     id: "2",
-//     name: "Jane Smith",
-//     avatarUrl: "/placeholder.svg?height=40&width=40",
-//     message: "I love the dark mode implementation. Very well done!",
-//     createdAt: "5 days ago",
-//   },
-//   {
-//     id: "3",
-//     name: "Alex Johnson",
-//     avatarUrl: "/placeholder.svg?height=40&width=40",
-//     message: "Your projects section really showcases your skills well. Impressive work!",
-//     createdAt: "1 week ago",
 //   },
 // ]
 
@@ -47,8 +33,6 @@
 //   const [isSubmitting, setIsSubmitting] = useState(false)
 
 //   const handleSignIn = () => {
-//     // This would normally redirect to GitHub OAuth
-//     // For demo purposes, we'll just set isSignedIn to true
 //     setIsSignedIn(true)
 //   }
 

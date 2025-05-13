@@ -28,7 +28,7 @@ const projects = [
     description: "This is my personal portfolio, where I showcase most of my projects.",
     image: "/assets/previews/portfolio-web.png",
     technologies: ["next", "react", "tailwindcss"],
-    github: "https://github.com/eumorales/",
+    github: "https://github.com/eumorales/portfolio-frontend",
     demo: "https://gilbertomorales.com",
   },
   {
@@ -153,7 +153,7 @@ export default function Home() {
 
       <section className="container mx-auto px-4 py-16">
         <div className="flex justify-between items-center mb-12">
-          <h2 className="text-4xl font-bold">Projects</h2>
+          <h2 className="text-4xl font-bold">Some Projects</h2>
           <AnimatedSection delay={0.2}>
             <Link href="/projects" className="text-sm flex items-center gap-1 border border-black dark:border-white px-3 py-1 rounded-md hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">
               View all <ExternalLink className="h-4 w-4" />

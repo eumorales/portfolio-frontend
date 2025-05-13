@@ -18,7 +18,6 @@ interface SpotifyStats {
 const urlTopArtista = "https://api.gilbertomorales.com/api/artista";
 const urlMaisTocada = "https://api.gilbertomorales.com/api/maistocada";
 
-// Funções de cache do LocalStorage
 const salvarLocalStorage = (chave: string, dados: any, expMinutos = 10) => {
   const tempoExpiracao = new Date().getTime() + expMinutos * 60 * 1000;
   localStorage.setItem(chave, JSON.stringify({ dados, tempoExpiracao }));
@@ -43,7 +42,7 @@ export default function SpotifyStats() {
   useEffect(() => {
     const fetchSpotifyData = async () => {
       try {
-        // Verifica cache para topArtist
+
         let topArtistData = carregarLocalStorage("topArtista");
         if (!topArtistData) {
           const respostaArtista = await fetch(urlTopArtista);
@@ -52,7 +51,6 @@ export default function SpotifyStats() {
           salvarLocalStorage("topArtista", topArtistData);
         }
 
-        // Verifica cache para topTrack
         let topTrackData = carregarLocalStorage("maisTocada");
         if (!topTrackData) {
           const respostaTocada = await fetch(urlMaisTocada);
@@ -61,7 +59,6 @@ export default function SpotifyStats() {
           salvarLocalStorage("maisTocada", topTrackData);
         }
 
-        // Estrutura os dados no formato esperado
         const formattedData: SpotifyStats = {
           topArtist: {
             name: topArtistData.topArtist || "Não encontrado",

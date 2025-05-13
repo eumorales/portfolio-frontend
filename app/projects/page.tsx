@@ -11,7 +11,7 @@ const projects = [
     description: "This is my personal portfolio, where I showcase most of my projects.",
     image: "/assets/previews/portfolio-web.png",
     technologies: ["next", "react", "tailwindcss"],
-    github: "https://github.com/eumorales/",
+    github: "https://github.com/eumorales/portfolio-frontend",
     demo: "https://gilbertomorales.com",
     featured: false,
   },
@@ -102,7 +102,6 @@ export default function Projects() {
           </>
         )}
 
-        {/* Other Projects */}
         <h2 className="text-2xl font-bold mb-8">Other Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {otherProjects.map((project, index) => (
