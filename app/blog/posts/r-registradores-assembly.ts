@@ -8,7 +8,7 @@ const post: BlogPost = {
   language: "Portuguese",
   category: "Notes",
   tags: ["arquitetura", "registradores", "assembly"],
-  year: 2025,
+  year: 2023,
   excerpt: "Resumo elaborado para revisão dos conteúdos de registradores e linguagem Assembly, com foco nas operações básicas e representação em linguagem de máquina.",
   content: `
     <p>Resumo elaborado para revisão dos conteúdos de registradores e linguagem Assembly, com foco nas operações básicas e representação em linguagem de máquina.</p>
