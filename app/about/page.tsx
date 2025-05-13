@@ -88,22 +88,13 @@ export default function About() {
           <h2 className="text-2xl font-bold mb-6">About</h2>
           <div className="space-y-4 text-gray-600 dark:text-gray-300">
             <p>
-              {/* Hello! I'm a fullstack developer passionate about creating amazing web experiences. My journey in
-              programming began X years ago, and since then I've worked on various projects that have allowed me to
-              enhance my technical and creative skills. */}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut interdum nibh nec tortor faucibus malesuada. Ut id molestie diam. Cras justo augue, ultrices non tristique non, auctor vitae odio. Sed tempor eleifend purus. In at tincidunt elit, vel gravida mauris. Quisque porttitor, sem sit amet finibus pharetra, turpis nisi pulvinar massa, bibendum sodales odio massa nec quam. Donec dolor purus, fermentum et tellus sit amet, dapibus blandit sapien.
-    
+              Hello! I'm a fullstack developer passionate about building engaging and functional web experiences. My journey with programming began at a young age, sparked by a curiosity to create plugins for games — and that passion has only grown since then.
             </p>
             <p>
-              {/* My expertise includes frontend development with React, Next.js, and Tailwind CSS, as well as backend
-              development with Node.js, Express, and SQL/NoSQL databases. I'm an enthusiast of clean code, scalable
-              architecture, and intuitive user experiences. */}
-              Cras varius eros a ante viverra convallis. Aenean hendrerit sed nisi vel elementum. Vivamus luctus ante at rutrum eleifend. Praesent ante elit, fermentum a orci quis, mattis tristique justo. Nunc sodales, augue nec ultricies accumsan, elit elit rhoncus est, vitae molestie ante tellus vel tellus. Quisque semper rutrum auctor. Integer eu mauris eu ex maximus faucibus. Phasellus blandit felis ligula, a vehicula mauris pretium id. Proin gravida, augue et bibendum luctus, odio erat lacinia justo, vel blandit quam neque nec odio.
+              Over the years, I’ve developed a strong foundation in technologies like React, HTML, JavaScript, Python, Java, TypeScript, and more. My focus is on writing clean, maintainable code and designing scalable systems that deliver great user experiences.
             </p>
             <p>
-              {/* When I'm not coding, I enjoy [your hobbies and interests]. I believe these activities help me maintain a
-              creative mind and bring new perspectives to my work. */}
-              Nam in elit semper, lobortis dui condimentum, posuere lectus. Vestibulum ut egestas est. Proin scelerisque ut tellus dignissim feugiat. In hac habitasse platea dictumst. Curabitur semper, elit eu interdum malesuada, ligula felis dignissim risus, egestas viverra tellus tortor a ex. Vivamus ac rutrum sem. Aliquam erat volutpat. Suspendisse vitae arcu auctor, efficitur sem sagittis, ultricies velit. Vestibulum bibendum consectetur cursus. Nam sagittis risus sit amet tincidunt porttitor. Nullam mollis eget neque sed ultrices. Cras risus augue, consectetur sed volutpat eget, blandit at justo. Sed quis metus urna. Phasellus ut nisl metus. Nulla blandit convallis ex vitae efficitur. Nam quis odio vel dui vestibulum malesuada.
+              Outside of programming, I enjoy playing volleyball and video games — hobbies that keep me balanced and often inspire fresh ideas for my projects.
             </p>
           </div>
         </AnimatedSection>
