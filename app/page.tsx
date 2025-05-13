@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Github, ExternalLink, Code, BookOpen, Clock } from "lucide-react"
+import { Github, ExternalLink, LaptopMinimal, BookOpen, Clock, Pin, Folder } from "lucide-react"
 import StatsCard from "@/components/stats-card"
 import { ThemeToggle } from "@/components/theme-toggle"
 import AnimatedText from "@/components/animated-text"
@@ -110,7 +110,58 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-16 bg-gray-50 dark:bg-zinc-900">
+    <section className="container mx-auto px-4 py-16 bg-gray-50 dark:bg-zinc-900">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {githubStats ? (
+          <StatsCard
+            icon={<Github className="h-5 w-5" />}
+            title="GitHub"
+            stats={[
+              { label: "Stars", value: githubStats.stars.toString() },
+              { label: "Followers", value: githubStats.followers.toString() },
+              { label: "Repositories", value: githubStats.repos.toString() },
+            ]}
+            delay={0.1}
+            className="group"
+          />
+        ) : (
+          <StatsCard
+            icon={<Github className="h-5 w-5" />}
+            title="GitHub"
+            stats={[
+              { label: "Stars", value: "..." },
+              { label: "Followers", value: "..." },
+              { label: "Repositories", value: "..." },
+            ]}
+            delay={0.1}
+          />
+        )}
+
+        <StatsCard
+          icon={<LaptopMinimal className="h-5 w-5" />}
+          title="Experience"
+          stats={[
+            { label: "Years", value: "3+" },
+            { label: "Technologies", value: "10+" },
+            { label: "Focus", value: "Fullstack" },
+          ]}
+          delay={0.2}
+        />
+
+        <StatsCard
+          icon={<BookOpen className="h-5 w-5" />}
+          title="Education"
+          stats={[
+            { label: "Degree", value: "BSc CS" },
+            { label: "Semester", value: "5th" },
+            { label: "University", value: "UFN" },
+          ]}
+          delay={0.3}
+        />
+      </div>
+    </section>
+
+      {/* <section className="container mx-auto px-4 py-16 bg-gray-50 dark:bg-zinc-900">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {githubStats ? (
             <StatsCard
@@ -158,11 +209,14 @@ export default function Home() {
             delay={0.3}
           />
         </div>
-      </section>
+      </section> */}
 
       <section className="container mx-auto px-4 py-16">
         <div className="flex justify-between items-center mb-12">
-          <h2 className="text-4xl font-bold">Some Projects</h2>
+       <div className="flex items-center gap-2">
+          <Folder className="h-8 w-8" />
+          <h2 className="text-3xl font-bold">Some Projects</h2>
+        </div>
           <AnimatedSection delay={0.2}>
             <Link href="/projects" className="text-sm flex items-center gap-1 border border-black dark:border-white px-3 py-1 rounded-md hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">
               View all <ExternalLink className="h-4 w-4" />
@@ -203,7 +257,10 @@ export default function Home() {
       <section className="container mx-auto px-4 py-16 bg-gray-50 dark:bg-zinc-900">
         <div className="max-w-2xl mx-auto">
           <AnimatedSection>
-            <h3 className="text-xl font-bold mb-4">Latest post</h3>
+            <div className="flex items-center gap-2 mb-4">
+              <Pin className="h-6 w-6" />
+              <h3 className="text-2xl font-bold">Latest post</h3>
+            </div>
             <div className="border border-gray-200 dark:border-zinc-700 rounded-lg p-6 bg-white dark:bg-zinc-800 hover:shadow-md transition-shadow">
               <Link href={`/blog/${latestPost.id}`} className="block">
                 <div className="flex items-center gap-2 mb-2">
