@@ -9,17 +9,26 @@ import AnimatedText from "@/components/animated-text"
 import AnimatedSection from "@/components/animated-section"
 import MobileMenu from "@/components/mobile-menu"
 import { useGithubStats } from "@/hooks/github"
+import { blogPosts } from "@/app/blog/posts" 
 
-const latestPost = {
-    id: "r-concorrencia-e-processos",
-    title: "Programação Concorrente, Escalonamento e Processos",
-    excerpt:
-      "Resumo elaborado para a prova de Sistemas Operacionais, abordando de forma clara os principais tópicos sobre concorrência, threads, escalonamento e sincronização — destinado ao uso próprio.",
-    date: "Apr 24, 2025",
-    readTime: "4 min read",
-    language: "Portuguese",
-    category: "Notes",
-}
+const posts = Object.values(blogPosts)
+
+const sortedPosts = posts.sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+)
+
+const latestPost = sortedPosts[0]
+
+// const latestPost = {
+//     id: "r-concorrencia-e-processos",
+//     title: "Programação Concorrente, Escalonamento e Processos",
+//     excerpt:
+//       "Resumo elaborado para a prova de Sistemas Operacionais, abordando de forma clara os principais tópicos sobre concorrência, threads, escalonamento e sincronização — destinado ao uso próprio.",
+//     date: "Apr 24, 2025",
+//     readTime: "4 min read",
+//     language: "Portuguese",
+//     category: "Notes",
+// }
 
 const projects = [
   {

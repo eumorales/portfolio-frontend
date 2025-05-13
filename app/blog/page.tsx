@@ -2,50 +2,12 @@ import Link from "next/link"
 import { Calendar, Clock, Globe } from "lucide-react"
 import AnimatedSection from "@/components/animated-section"
 import PageHeader from "@/components/page-header"
+import { blogPosts as postsRecord } from "./posts"
 
-interface BlogPost {
-  id: string
-  title: string
-  excerpt: string
-  date: string
-  readTime: string
-  language: string
-  category: "Article" | "How To" | "Notes" | "List"
-  tags: string[]
-  year: number
-}
+const blogPosts = Object.values(postsRecord)
 
-const blogPosts: BlogPost[] = [
-  {
-    id: "r-concorrencia-e-processos",
-    title: "Programação Concorrente, Escalonamento e Processos",
-    excerpt:
-      "Resumo elaborado para a prova de Sistemas Operacionais, abordando de forma clara os principais tópicos sobre concorrência, threads, escalonamento e sincronização — destinado ao uso próprio.",
-    date: "Apr 24, 2025",
-    readTime: "4 min read",
-    language: "Portuguese",
-    category: "Notes",
-    tags: ["sistemas operacionais", "concorrencia", "threads", "escalonamento"],
-    year: 2025,
-  },
-
-  {
-    id: "r-registradores-assembly",
-    title: "Registradores e Linguagem Assembly",
-    excerpt:
-      "Resumo elaborado para revisão dos conteúdos de registradores e linguagem Assembly, com foco nas operações básicas e representação em linguagem de máquina.",
-    date: "Dec 6, 2023",
-    readTime: "3 min read",
-    language: "Portuguese",
-    category: "Notes",
-    tags: ["arquitetura", "registradores", "assembly"],
-    year: 2023,
-  }
-
-]
-
-const groupPostsByYear = (posts: BlogPost[]) => {
-  const grouped: Record<number, BlogPost[]> = {}
+const groupPostsByYear = (posts: typeof blogPosts) => {
+  const grouped: Record<number, typeof blogPosts> = {}
 
   posts.forEach((post) => {
     if (!grouped[post.year]) {
