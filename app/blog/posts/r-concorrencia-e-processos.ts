@@ -2,7 +2,7 @@ import { BlogPost } from "@/types/blog"
 
 const post: BlogPost = {
     id: "r-concorrencia-e-processos",
-    title: "Revisão - Programação Concorrente, Escalonamento e Processos",
+    title: "Programação Concorrente, Escalonamento e Processos",
     date: "Apr 24, 2025",
     readTime: "4 min read",
     language: "Portuguese",

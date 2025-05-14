@@ -28,23 +28,11 @@ const getCategoryColorClass = (category: string) => {
 // Make the function async
 export default async function BlogPostPage({ params }: BlogPostParams) {
   // Await params to resolve the slug
-  const { slug } = await params;
-  const post = blogPosts[slug];
+  const { slug } = await params
+  const post = blogPosts[slug]
 
   if (!post) {
-    return (
-      <main className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
-        <div className="container mx-auto px-4 py-16">
-          <Link href="/blog" className="inline-flex items-center gap-2 mb-8 hover:underline">
-            <ArrowLeft className="h-4 w-4" /> Back to blog
-          </Link>
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl font-bold mb-4">Post not found</h1>
-            <p>The blog post you're looking for doesn't exist or has been removed.</p>
-          </div>
-        </div>
-      </main>
-    )
+    return notFound()
   }
 
   return (

@@ -2,7 +2,7 @@ import { BlogPost } from "@/types/blog"
 
 const post: BlogPost = {
   id: "r-registradores-assembly",
-  title: "Revisão - Registradores e Assembly",
+  title: "Registradores e Assembly",
   date: "Dec 6, 2023",
   readTime: "3 min read",
   language: "Portuguese",
