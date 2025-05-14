@@ -51,8 +51,7 @@ export default function Home() {
           </Link>
           <ThemeToggle />
         </nav>
-        <div className="md:hidden flex items-center gap-4">
-          <ThemeToggle />
+        <div className="md:hidden">
           <MobileMenu />
         </div>
       </header>
