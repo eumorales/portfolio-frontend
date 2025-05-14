@@ -11,8 +11,6 @@ import MobileMenu from "@/components/mobile-menu"
 import { useGithubStats } from "@/hooks/github"
 import { blogPosts } from "@/app/blog/posts"
 import { getRecentProjects, formatDate } from "@/lib/projects"
-import { getTechColor } from "@/lib/tech-colors"
-import { TechBadge } from "@/components/tech-badge"
 
 const posts = Object.values(blogPosts)
 
@@ -186,9 +184,16 @@ export default function Home() {
                     <p className="text-gray-600 dark:text-zinc-300 mb-4 flex-grow">{project.description}</p>
 
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.map((tech, idx) => (
-                        <TechBadge key={`${tech}-${idx}`} tech={tech} />
-                        ))}
+                      {project.technologies.map((tech, idx) => {
+                        return (
+                          <span
+                            key={`${tech}-${idx}`}
+                            className="text-xs font-medium bg-gray-100 dark:bg-zinc-800 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-full"
+                          >
+                            {tech}
+                          </span>
+                        )
+                      })}
                     </div>
 
                     <div className="flex gap-6 mt-auto">

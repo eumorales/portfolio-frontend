@@ -5,7 +5,6 @@ import { Github, ArrowRight, Calendar } from 'lucide-react'
 import AnimatedSection from "@/components/animated-section"
 import PageHeader from "@/components/page-header"
 import Image from "next/image"
-import { getTechColor } from "@/lib/tech-colors"
 import { getFeaturedProjects, getNonFeaturedProjects, formatDate } from "@/lib/projects"
 
 export default function Projects() {
@@ -54,13 +53,12 @@ export default function Projects() {
                             {project.description}
                           </p>
 
-                          <div className="flex flex-wrap gap-2 mb-8">
+                          <div className="flex flex-wrap gap-2 mb-4">
                             {project.technologies.map((tech, idx) => {
-                              const colors = getTechColor(tech)
                               return (
                                 <span
-                                  key={idx}
-                                  className={`text-sm font-medium ${colors.text} ${colors.bg} px-3 py-1.5 rounded-full`}
+                                  key={`${tech}-${idx}`}
+                                  className="text-xs font-medium bg-gray-100 dark:bg-zinc-800 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-full"
                                 >
                                   {tech}
                                 </span>
@@ -127,11 +125,10 @@ export default function Projects() {
 
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.technologies.map((tech, idx) => {
-                        const colors = getTechColor(tech)
                         return (
                           <span
-                            key={idx}
-                            className={`text-xs font-medium ${colors.text} ${colors.bg} px-2 py-1 rounded-full`}
+                            key={`${tech}-${idx}`}
+                            className="text-xs font-medium bg-gray-100 dark:bg-zinc-800 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-full"
                           >
                             {tech}
                           </span>
