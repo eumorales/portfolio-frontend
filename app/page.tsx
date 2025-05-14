@@ -23,11 +23,15 @@ export default function Home() {
   const recentProjects = getRecentProjects(3)
 
   return (
-    <main className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
+        <main className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
       <header className="container mx-auto px-4 py-6 flex justify-between items-center">
-        <Link href="/" className="font-bold text-xl italic">
+        <Link
+          href="/"
+          className="font-bold text-xl italic bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent"
+        >
           gilbertomorales.
         </Link>
+
         <nav className="hidden md:flex items-center space-x-6">
           <Link href="/" className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium">
             Home
@@ -47,40 +51,45 @@ export default function Home() {
           <ThemeToggle />
         </nav>
         <div className="md:hidden flex items-center gap-4">
-          <ThemeToggle />
           <MobileMenu />
         </div>
       </header>
 
-      <section className="container mx-auto px-4 py-16 md:py-32">
+      <section className="container mx-auto px-4 py-12 md:py-32">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-6">
-            <AnimatedText text="Gilberto Morales," className="text-6xl font-black" />
+          <div className="space-y-4 md:space-y-6 text-center md:text-left">
+            <AnimatedText text="Gilberto Morales," className="text-4xl sm:text-5xl md:text-6xl font-black" />
             <AnimatedText
               text="Fullstack Developer"
-              className="text-3xl text-gray-500 dark:text-zinc-400 font-light"
+              className="text-2xl sm:text-3xl text-gray-500 dark:text-zinc-400 font-light"
               once={true}
             />
             <AnimatedSection delay={0.4}>
-              <p className="text-gray-600 dark:text-zinc-300 max-w-md mt-6">
-                {"I'm a Computer Science student who enjoys fullstack web development, always striving to improve my skills."}
+              <p className="text-gray-600 dark:text-zinc-300 max-w-md mx-auto md:mx-0 mt-4 md:mt-6">
+                "I'm a Computer Science student who enjoys fullstack web development, always striving to improve my
+                skills."
               </p>
             </AnimatedSection>
             <AnimatedSection delay={0.6}>
               <div className="pt-4">
                 <Link
-                  href="/cv.pdf"
-                  target="_blank"
+                  href="/about"
                   className="inline-flex items-center gap-2 border border-black dark:border-white px-4 py-2 rounded-md hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
                 >
-                  Open CV <ExternalLink className="h-4 w-4" />
+                  About Me <ExternalLink className="h-4 w-4" />
                 </Link>
               </div>
             </AnimatedSection>
           </div>
           <AnimatedSection delay={0.3} direction="left">
-            <div className="hidden md:flex justify-center">
-              <Image src="/assets/capa.svg" alt="Gilberto Morales" width={400} height={400} className="mx-auto" />
+            <div className="flex justify-center mt-8 md:mt-0">
+              <Image
+                src="/assets/capa.svg"
+                alt="Gilberto Morales"
+                width={400}
+                height={400}
+                className="w-3/4 sm:w-2/3 md:w-full max-w-[300px] md:max-w-[400px] mx-auto"
+              />
             </div>
           </AnimatedSection>
         </div>
