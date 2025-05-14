@@ -150,21 +150,10 @@ export default function Guestbook() {
         <div className="flex flex-col items-center text-center">
           <AnimatedText text="Coming Soon" className="text-6xl md:text-6xl mt-12 font-black mb-6" />
           
-          <AnimatedSection delay={0.2} className="mb-12">
+          <AnimatedSection delay={0.2} className="mb-4">
             <p className="text-xl text-gray-600 dark:text-zinc-300 max-w-2xl mx-auto">
-              I'm working on something exciting that will be available here soon.
+              I'm working on this feature, and it will be available here soon.
             </p>
-          </AnimatedSection>
-
-          <AnimatedSection delay={0.3} className="">
-            <div className="relative w-full max-w-md h-64 md:h-80">
-              <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Coming Soon Illustration"
-                fill
-                className="object-contain"
-              />
-            </div>
           </AnimatedSection>
 
           <AnimatedSection delay={0.5} className="mt-4">

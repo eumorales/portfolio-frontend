@@ -72,9 +72,9 @@ export default function Home() {
         </Link>
         <nav className="hidden md:flex items-center space-x-6">
           <Link href="/" className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium">Home</Link>
+          <Link href="/about" className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium">About</Link>
           <Link href="/blog" className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium">Blog</Link>
           <Link href="/projects" className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium">Projects</Link>
-          <Link href="/about" className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium">About</Link>
           <Link href="/guestbook" className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium">Guestbook</Link>
           <ThemeToggle />
         </nav>
@@ -214,7 +214,7 @@ export default function Home() {
       <section className="container mx-auto px-4 py-16">
         <div className="flex justify-between items-center mb-12">
        <div className="flex items-center gap-2">
-          <Folder className="h-8 w-8" />
+          <Folder className="h-6 w-6" />
           <h2 className="text-3xl font-bold">Some Projects</h2>
         </div>
           <AnimatedSection delay={0.2}>
@@ -240,12 +240,13 @@ export default function Home() {
                     ))}
                   </div>
                   <div className="flex gap-4 mt-auto">
-                    <Link href={project.github} target="_blank" rel="noopener noreferrer" className="text-sm flex items-center gap-1 text-gray-600 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors">
-                      <Github className="h-4 w-4" /> Code
-                    </Link>
                     <Link href={project.demo} target="_blank" rel="noopener noreferrer" className="text-sm flex items-center gap-1 text-gray-600 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors">
                       <ExternalLink className="h-4 w-4" /> Demo
                     </Link>
+                    <Link href={project.github} target="_blank" rel="noopener noreferrer" className="text-sm flex items-center gap-1 text-gray-600 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors">
+                      <Github className="h-4 w-4" /> Code
+                    </Link>
+
                   </div>
                 </div>
               </div>
