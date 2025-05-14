@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { Github, ArrowRight, Calendar } from 'lucide-react'
 import AnimatedSection from "@/components/animated-section"

@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Github, ExternalLink, LaptopMinimal, BookOpen, Clock, Pin, Folder, Calendar } from "lucide-react"
+import { Github, ExternalLink, LaptopMinimal, BookOpen, Clock, Pin, Folder, Calendar, ArrowRight } from 'lucide-react'
 import StatsCard from "@/components/stats-card"
 import { ThemeToggle } from "@/components/theme-toggle"
 import AnimatedText from "@/components/animated-text"
@@ -12,6 +12,7 @@ import { useGithubStats } from "@/hooks/github"
 import { blogPosts } from "@/app/blog/posts"
 import { getRecentProjects, formatDate } from "@/lib/projects"
 import { getTechColor } from "@/lib/tech-colors"
+import { TechBadge } from "@/components/tech-badge"
 
 const posts = Object.values(blogPosts)
 
@@ -26,13 +27,9 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
       <header className="container mx-auto px-4 py-6 flex justify-between items-center">
-        <Link
-          href="/"
-          className="font-bold text-xl italic bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent"
-        >
+        <Link href="/" className="font-bold text-xl italic">
           gilbertomorales.
         </Link>
-
         <nav className="hidden md:flex items-center space-x-6">
           <Link href="/" className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium">
             Home
@@ -51,46 +48,41 @@ export default function Home() {
           </Link>
           <ThemeToggle />
         </nav>
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-4">
+          <ThemeToggle />
           <MobileMenu />
         </div>
       </header>
 
-      <section className="container mx-auto px-4 py-12 md:py-32">
+      <section className="container mx-auto px-4 py-16 md:py-32">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-4 md:space-y-6 text-center md:text-left">
-            <AnimatedText text="Gilberto Morales," className="text-4xl sm:text-5xl md:text-6xl font-black" />
+          <div className="space-y-6">
+            <AnimatedText text="Gilberto Morales," className="text-6xl font-black" />
             <AnimatedText
               text="Fullstack Developer"
-              className="text-2xl sm:text-3xl text-gray-500 dark:text-zinc-400 font-light"
+              className="text-3xl text-gray-500 dark:text-zinc-400 font-light"
               once={true}
             />
             <AnimatedSection delay={0.4}>
-              <p className="text-gray-600 dark:text-zinc-300 max-w-md mx-auto md:mx-0 mt-4 md:mt-6">
-                "I'm a Computer Science student who enjoys fullstack web development, always striving to improve my
-                skills."
+              <p className="text-gray-600 dark:text-zinc-300 max-w-md mt-6">
+                {"I'm a Computer Science student who enjoys fullstack web development, always striving to improve my skills."}
               </p>
             </AnimatedSection>
             <AnimatedSection delay={0.6}>
               <div className="pt-4">
                 <Link
-                  href="/about"
+                  href="/cv.pdf"
+                  target="_blank"
                   className="inline-flex items-center gap-2 border border-black dark:border-white px-4 py-2 rounded-md hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
                 >
-                  About Me <ExternalLink className="h-4 w-4" />
+                  Open CV <ExternalLink className="h-4 w-4" />
                 </Link>
               </div>
             </AnimatedSection>
           </div>
           <AnimatedSection delay={0.3} direction="left">
-            <div className="flex justify-center mt-8 md:mt-0">
-              <Image
-                src="/assets/capa.svg"
-                alt="Gilberto Morales"
-                width={400}
-                height={400}
-                className="w-3/4 sm:w-2/3 md:w-full max-w-[300px] md:max-w-[400px] mx-auto"
-              />
+            <div className="hidden md:flex justify-center">
+              <Image src="/assets/capa.svg" alt="Gilberto Morales" width={400} height={400} className="mx-auto" />
             </div>
           </AnimatedSection>
         </div>
@@ -174,55 +166,51 @@ export default function Home() {
         >
           {recentProjects.map((project, index) => (
             <AnimatedSection key={project.id} delay={index * 0.1}>
-              <div className="border border-gray-200 dark:border-zinc-800 rounded-lg overflow-hidden hover:shadow-sm transition-shadow h-full flex flex-col">
-                <div className="relative aspect-video">
-                  <Image
-                    src={project.image || "/placeholder.svg?height=600&width=800"}
-                    alt={project.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-2">
-                    <Calendar className="h-3 w-3" />
-                    <time dateTime={project.publishedAt.toISOString()}>{formatDate(project.publishedAt)}</time>
+              <div className="group relative">
+                <div className="relative border border-gray-200 dark:border-zinc-800 rounded-lg overflow-hidden hover:shadow-sm transition-all duration-300 h-full flex flex-col bg-white dark:bg-zinc-900">
+                  <div className="relative aspect-video overflow-hidden">
+                    <Image
+                      src={project.image || "/placeholder.svg?height=600&width=800"}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                   </div>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-2">
+                      <Calendar className="h-3 w-3" />
+                      <time dateTime={project.publishedAt.toISOString()}>{formatDate(project.publishedAt)}</time>
+                    </div>
 
-                  <h3 className="text-xl font-bold mb-2 text-black dark:text-white">{project.title}</h3>
-                  <p className="text-gray-600 dark:text-zinc-300 mb-4 flex-grow">{project.description}</p>
+                    <h3 className="text-xl font-bold mb-2 text-black dark:text-white">{project.title}</h3>
+                    <p className="text-gray-600 dark:text-zinc-300 mb-4 flex-grow">{project.description}</p>
 
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech, idx) => {
-                      const colors = getTechColor(tech)
-                      return (
-                        <span
-                          key={idx}
-                          className={`text-xs font-medium ${colors.text} ${colors.bg} px-2 py-1 rounded-full`}
-                        >
-                          {tech}
-                        </span>
-                      )
-                    })}
-                  </div>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech, idx) => (
+                        <TechBadge key={`${tech}-${idx}`} tech={tech} />
+                        ))}
+                    </div>
 
-                  <div className="flex gap-4 mt-auto">
-                    <Link
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm flex items-center gap-1 text-gray-600 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors"
-                    >
-                      <ExternalLink className="h-4 w-4" /> Demo
-                    </Link>
-                    <Link
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm flex items-center gap-1 text-gray-600 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors"
-                    >
-                      <Github className="h-4 w-4" /> Code
-                    </Link>
+                    <div className="flex gap-6 mt-auto">
+                      <Link
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm flex items-center gap-2 font-medium text-gray-800 dark:text-gray-200 hover:text-black dark:hover:text-white transition-colors group/link"
+                      >
+                        <span>Visit Website</span>
+                        <ArrowRight className="h-4 w-4 transform group-hover/link:translate-x-1 transition-transform" />
+                      </Link>
+                      <Link
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm flex items-center gap-2 font-medium text-gray-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
+                      >
+                        <Github className="h-4 w-4" />
+                        <span>Source Code</span>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -246,10 +234,10 @@ export default function Home() {
                       latestPost.category === "Article"
                         ? "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
                         : latestPost.category === "How To"
-                          ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
-                          : latestPost.category === "Notes"
-                            ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200"
-                            : "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200"
+                        ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
+                        : latestPost.category === "Notes"
+                        ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200"
+                        : "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200"
                     }`}
                   >
                     {latestPost.category}

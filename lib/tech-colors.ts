@@ -1,15 +1,14 @@
 export const techColors: Record<string, { bg: string; text: string }> = {
-
   next: {
-    bg: "bg-black dark:bg-white",
-    text: "text-white dark:text-black",
+    bg: "bg-black/10 dark:bg-white/10",
+    text: "text-black dark:text-white",
   },
   react: {
-    bg: "bg-[#282c34]",
+    bg: "bg-[#61dafb]/10",
     text: "text-[#61dafb]",
   },
   tailwindcss: {
-    bg: "bg-[#0b1120]",
+    bg: "bg-[#38bdf8]/10",
     text: "text-[#38bdf8]",
   },
   html: {
@@ -22,9 +21,8 @@ export const techColors: Record<string, { bg: string; text: string }> = {
   },
   javascript: {
     bg: "bg-[#f7df1e]/10",
-    text: "text-[#000000] dark:text-[#f7df1e]",
+    text: "text-black dark:text-[#f7df1e]",
   },
-  
   c: {
     bg: "bg-[#5c6bc0]/10",
     text: "text-[#5c6bc0]",
@@ -50,12 +48,12 @@ export const techColors: Record<string, { bg: string; text: string }> = {
     text: "text-[#4479a1]",
   },
   "next.js": {
-    bg: "bg-black dark:bg-white",
-    text: "text-white dark:text-black",
+    bg: "bg-black/10 dark:bg-white/10",
+    text: "text-black dark:text-white",
   },
   nextjs: {
-    bg: "bg-black dark:bg-white",
-    text: "text-white dark:text-black",
+    bg: "bg-black/10 dark:bg-white/10",
+    text: "text-black dark:text-white",
   },
   "node.js": {
     bg: "bg-[#339933]/10",
@@ -110,8 +108,8 @@ export const techColors: Record<string, { bg: string; text: string }> = {
     text: "text-[#00add8]",
   },
   rust: {
-    bg: "bg-[#000000]/10",
-    text: "text-[#000000] dark:text-[#ffffff]",
+    bg: "bg-[#000000]/10 dark:bg-[#ffffff]/10",
+    text: "text-black dark:text-white",
   },
 }
 
