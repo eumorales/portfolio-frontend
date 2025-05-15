@@ -61,7 +61,7 @@ export default function About() {
               <p className="text-gray-600 dark:text-zinc-300 mb-4">Fullstack Developer</p>
 
               <div className="flex gap-4 mb-6">
-                <Link href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                <Link href="https://github.com/eumorales" target="_blank" rel="noopener noreferrer">
                   <Github className="h-5 w-5 hover:text-gray-600 dark:hover:text-zinc-300" />
                 </Link>
                 <Link href="https://instagram.com/gilbertomrls" target="_blank" rel="noopener noreferrer">
