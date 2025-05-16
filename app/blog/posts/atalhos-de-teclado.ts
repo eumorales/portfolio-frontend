@@ -2,7 +2,7 @@ import { BlogPost } from "@/types/blog"
 
 const post: BlogPost = {
   id: "atalhos-de-teclado",
-  title: "Atalhos de Teclado: Como Ganhar Tempo no Windows",
+  title: "Atalhos de Teclado: Como Ganhar Tempo no Computador",
   date: "May 15, 2025",
   readTime: "4 min read",
   language: "Portuguese",

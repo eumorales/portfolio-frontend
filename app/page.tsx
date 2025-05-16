@@ -149,8 +149,7 @@ export default function Home() {
       <section className="container mx-auto px-4 py-16">
         <div className="flex justify-between items-center mb-12">
           <div className="flex items-center gap-2">
-            <Folder className="h-6 w-6" />
-            <h2 className="text-3xl font-bold">Some Projects</h2>
+            <h2 className="text-3xl font-bold">Recent Projects</h2>
           </div>
           <AnimatedSection delay={0.2}>
             <Link

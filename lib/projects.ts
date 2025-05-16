@@ -41,9 +41,20 @@ export const projects: Project[] = [
     technologies: ["html", "css", "javascript"],
     github: "https://github.com/eumorales/aacuf",
     demo: "https://aacuf.com",
-    featured: true,
+    featured: false,
     publishedAt: new Date("2024-06-20"), 
   },
+  {
+      id: "removedor-de-fundo",
+      title: "Removedor de Fundo",
+      description: "A web app for removing backgrounds from images using the RemoveBG API.",
+      image: "/assets/previews/removedor-de-fundo-web.png",
+      technologies: ["react", "next", "removebg-api"],
+      github: "https://github.com/eumorales/removedor-de-fundo",
+      demo: "https://rf.gilbertomorales.com",
+      featured: true,
+      publishedAt: new Date("2025-05-16"), 
+    },
 ]
 
 export const getFeaturedProjects = (limit?: number) => {

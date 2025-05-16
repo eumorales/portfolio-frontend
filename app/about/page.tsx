@@ -49,7 +49,7 @@ export default function About() {
             <div className="w-32 h-32 md:w-40 md:h-40 relative mb-4 md:mb-0">
               <Image
                 src="/assets/perfil.jpg"
-                alt="Profile picture"
+                alt="Gilberto"
                 fill
                 className="object-cover rounded-full"
               />
