@@ -36,7 +36,7 @@ export const projects: Project[] = [
   {
     id: "aacuf",
     title: "AACUF",
-    description: "Linktree for Computer Athletic Association of Universidade Franciscana.",
+    description: "Linktree for Computer Athletic Association of UFN.",
     image: "/assets/previews/aacuf-web.png",
     technologies: ["html", "css", "javascript"],
     github: "https://github.com/eumorales/aacuf",
@@ -52,9 +52,31 @@ export const projects: Project[] = [
       technologies: ["react", "next", "removebg-api"],
       github: "https://github.com/eumorales/removedor-de-fundo",
       demo: "https://rf.gilbertomorales.com",
-      featured: true,
+      featured: false,
       publishedAt: new Date("2025-05-16"), 
     },
+    {
+      "id": "quadro-tatico",
+      "title": "Quadro Tático",
+      "description": "A tactical board web app for planning and visualizing volleyball plays.",
+      "image": "/assets/previews/quadro-tatico-web.png",
+      "technologies": ["react", "next"],
+      "github": "https://github.com/eumorales/quadro-tatico",
+      "demo": "https://volei.gilbertomorales.com",
+      "featured": false,
+      "publishedAt": new Date("2025-05-21")
+    },
+    {
+      "id": "planejamento-aacuf",
+      "title": "Planejamento AACUF",
+      "description": "Task management system for AACUF, focused on organizing and tracking tasks efficiently.",
+      "image": "/assets/previews/planejamento-aacuf-web.png",
+      "technologies": ["react", "next", "mongodb"],
+      "github": "https://github.com/eumorales/planejamento-aacuf",
+      "demo": "https://p.aacuf.com",
+      "featured": true,
+      "publishedAt": new Date("2025-05-20")
+    }
 ]
 
 export const getFeaturedProjects = (limit?: number) => {
