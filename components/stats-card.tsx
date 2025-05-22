@@ -16,45 +16,46 @@ interface StatsCardProps {
   href?: string
 }
 
-export default function StatsCard({ icon, title, stats, delay = 0, className, href }: StatsCardProps) {
+export default function StatsCard({ 
+  icon, 
+  title, 
+  stats, 
+  delay = 0, 
+  className, 
+  href 
+}: StatsCardProps) {
+  
   const cardContent = (
     <AnimatedSection
       delay={delay}
       className={cn(
-        "bg-white dark:bg-zinc-800 p-6 rounded-lg border border-gray-200 dark:border-zinc-700",
-        "transition-all duration-300 hover:shadow-md hover:-translate-y-1",
+        "bg-white dark:bg-zinc-800 p-4 sm:p-5 rounded-xl border border-gray-200 dark:border-zinc-700",
+        "transition-all duration-300 hover:shadow-md",
         className,
       )}
     >
-      <div className="flex flex-col items-center justify-center mb-4 gap-2 text-center">
-        <div className="flex items-center justify-center gap-2">
-          <span className="text-gray-500 dark:text-gray-400">{icon}</span>
+      <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
+        <div className="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-gray-100 dark:bg-zinc-700 text-gray-700 dark:text-gray-300">
+          {icon}
         </div>
-        {href && (
-          <div className="text-gray-400 dark:text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M7 17L17 7" />
-              <path d="M7 7h10v10" />
-            </svg>
-          </div>
-        )}
+        <div>
+          <h3 className="text-sm sm:text-base font-semibold text-gray-900 dark:text-white">{title}</h3>
+          <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Updated just now</p>
+        </div>
       </div>
-
-      <div className="grid grid-cols-3 gap-4">
+      
+      <div className="grid grid-cols-3 gap-2 sm:gap-3">
         {stats.map((stat, index) => (
-          <div key={index} className="text-center">
-            <p className="text-xl font-bold text-gray-900 dark:text-white">{stat.value}</p>
-            <p className="text-sm text-gray-500 dark:text-zinc-400">{stat.label}</p>
+          <div 
+            key={index} 
+            className="bg-gray-50 dark:bg-zinc-800/80 rounded-lg p-2 sm:p-3 border border-gray-100 dark:border-zinc-700/50"
+          >
+            <p className="text-[10px] font-medium text-gray-500 dark:text-zinc-400 uppercase tracking-wide truncate">
+              {stat.label}
+            </p>
+            <p className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">
+              {stat.value}
+            </p>
           </div>
         ))}
       </div>
@@ -63,7 +64,7 @@ export default function StatsCard({ icon, title, stats, delay = 0, className, hr
 
   if (href) {
     return (
-      <a href={href} className="block group">
+      <a href={href} className="block" target="_blank" rel="noopener noreferrer">
         {cardContent}
       </a>
     )

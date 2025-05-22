@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Github, ExternalLink, LaptopMinimal, BookOpen, Clock, Pin, Folder, Calendar, ArrowRight } from 'lucide-react'
+import { Github, ExternalLink, LaptopMinimal, BookOpen, Clock, Pin, Calendar, ArrowRight } from "lucide-react"
 import StatsCard from "@/components/stats-card"
 import { ThemeToggle } from "@/components/theme-toggle"
 import AnimatedText from "@/components/animated-text"
@@ -11,6 +11,7 @@ import MobileMenu from "@/components/mobile-menu"
 import { useGithubStats } from "@/hooks/github"
 import { blogPosts } from "@/app/blog/posts"
 import { getRecentProjects, formatDate } from "@/lib/projects"
+import { TypeAnimation } from "react-type-animation"
 
 const posts = Object.values(blogPosts)
 
@@ -23,14 +24,15 @@ export default function Home() {
   const recentProjects = getRecentProjects(3)
 
   return (
-        <main className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
+    <main className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
       <header className="container mx-auto px-4 py-6 flex justify-between items-center">
-        <Link
-          href="/"
-          className="font-bold text-xl italic bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent"
-        >
-          gilbertomorales.
-        </Link>
+      <Link
+        href="/"
+        className="font-bold text-xl italic text-black dark:text-white"
+      >
+        gilbertomorales.
+      </Link>
+
 
         <nav className="hidden md:flex items-center space-x-6">
           <Link href="/" className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium">
@@ -55,47 +57,60 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="container mx-auto px-4 py-12 md:py-32">
+      <section className="container mx-auto px-4 py-12 md:py-20 pb-0 md:pb-0 relative mt-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4 md:space-y-6 text-center md:text-left">
             <AnimatedText text="Gilberto Morales," className="text-4xl sm:text-5xl md:text-6xl font-black" />
-            <AnimatedText
-              text="Fullstack Developer"
-              className="text-2xl sm:text-3xl text-gray-500 dark:text-zinc-400 font-light"
-              once={true}
-            />
+            <div className="text-2xl sm:text-3xl text-gray-500 dark:text-zinc-400 font-light h-[40px] sm:h-[48px] flex items-center md:items-start justify-center md:justify-start">
+              <TypeAnimation
+                sequence={[
+                  "Fullstack Developer",
+                  2000,
+                  "Computer Science Student",
+                  2000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Number.POSITIVE_INFINITY}
+                className="inline-block border-r-2 border-black dark:border-white pr-1"
+                cursor={false}
+              />
+            </div>
             <AnimatedSection delay={0.4}>
               <p className="text-gray-600 dark:text-zinc-300 max-w-md mx-auto md:mx-0 mt-4 md:mt-6">
                 "I'm a Computer Science student who enjoys fullstack web development, always striving to improve my
                 skills."
               </p>
             </AnimatedSection>
-            <AnimatedSection delay={0.6}>
-              <div className="pt-4">
-                <Link
-                  href="/about"
-                  className="inline-flex items-center gap-2 border border-black dark:border-white px-4 py-2 rounded-md hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
-                >
-                  About Me <ExternalLink className="h-4 w-4" />
-                </Link>
-              </div>
-            </AnimatedSection>
-          </div>
-          <AnimatedSection delay={0.3} direction="left">
-            <div className="flex justify-center mt-8 md:mt-0">
-              <Image
-                src="/assets/capa.svg"
-                alt="Gilberto Morales"
-                width={400}
-                height={400}
-                className="w-3/4 sm:w-2/3 md:w-full max-w-[300px] md:max-w-[400px] mx-auto"
-              />
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      <section className="container mx-auto px-4 py-16 bg-gray-50 dark:bg-zinc-900">
+      
+<AnimatedSection delay={0.6}>
+  <div className="pt-4 pb-16 md:pb-0 flex justify-center md:justify-start">
+    <Link
+      href="/about"
+      className="inline-flex items-center gap-2 border border-black dark:border-white px-4 py-2 rounded-md hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+    >
+      About Me <ExternalLink className="h-4 w-4" />
+    </Link>
+  </div>
+</AnimatedSection>
+    </div>
+    
+<AnimatedSection delay={0.3} direction="left" className="flex items-start md:items-center">
+  <div className="flex justify-center md:justify-end relative w-full -mt-12 md:-mt-24">
+    <div className="relative md:w-5/6">
+      <Image
+        src="/assets/capa.svg"
+        alt="Gilberto Morales"
+        width={400}
+        height={400}
+        className="w-3/4 sm:w-2/3 md:w-full max-w-none md:max-w-none mx-auto md:mx-0 relative z-10 drop-shadow-lg"
+      />
+    </div>
+  </div>
+</AnimatedSection>
+  </div>
+</section>
+        <section className="container mx-auto px-4 pt-6 pb-16 mt-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {githubStats ? (
             <StatsCard
@@ -145,7 +160,6 @@ export default function Home() {
           />
         </div>
       </section>
-
       <section className="container mx-auto px-4 py-16">
         <div className="flex justify-between items-center mb-12">
           <div className="flex items-center gap-2">
@@ -247,10 +261,10 @@ export default function Home() {
                       latestPost.category === "Article"
                         ? "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
                         : latestPost.category === "How To"
-                        ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
-                        : latestPost.category === "Notes"
-                        ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200"
-                        : "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200"
+                          ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
+                          : latestPost.category === "Notes"
+                            ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200"
+                            : "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200"
                     }`}
                   >
                     {latestPost.category}
