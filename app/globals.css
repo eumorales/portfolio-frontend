@@ -78,7 +78,6 @@ body {
   }
 }
 
-/* Prose styles for blog content */
 .prose {
   @apply max-w-none;
 }
