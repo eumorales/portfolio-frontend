@@ -1,10 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import Link from "next/link"
 import { ArrowLeft, MessageSquare, Github } from "lucide-react"
 import AnimatedSection from "@/components/animated-section"
-import AnimatedText from "@/components/animated-text"
 import { useTheme } from "next-themes"
 import PageHeader from "@/components/page-header"
 
@@ -83,37 +81,31 @@ export default function Guestbook() {
         </AnimatedSection>
 
         <style jsx global>{`
-          /* Estilos personalizados para o Giscus */
           .giscus {
             width: 100%;
           }
           
-          /* Ajustes para imagens nos comentários */
           .giscus img:not(.avatar) {
             max-width: 100%;
             height: auto;
             border-radius: 0.5rem;
           }
           
-          /* Ajustes para avatares */
           .giscus .avatar {
             border-radius: 50%;
           }
           
-          /* Ajustes para links */
           .giscus a {
             color: inherit;
             text-decoration: underline;
             text-underline-offset: 2px;
           }
           
-          /* Ajustes para botões */
           .giscus button {
             border-radius: 0.375rem;
             transition: all 0.2s;
           }
           
-          /* Ajustes para campos de texto */
           .giscus textarea, .giscus input {
             border-radius: 0.375rem;
             border: 1px solid #e5e7eb;
