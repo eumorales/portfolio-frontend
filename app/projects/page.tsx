@@ -31,14 +31,20 @@ export default function Projects() {
                   <div className="group relative">
                     <div className="relative bg-white dark:bg-zinc-900 p-6 md:p-8 rounded-xl shadow-sm border border-gray-200 dark:border-zinc-800 overflow-hidden">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                        <div className="relative aspect-video rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
-                          <Image
-                            src={project.image || "/placeholder.svg?height=600&width=800"}
-                            alt={project.title}
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          />
-                        </div>
+                      <Link
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative aspect-video rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300 block"
+                      >
+                        <Image
+                          src={project.image || "/placeholder.svg?height=600&width=800"}
+                          alt={project.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </Link>
+
 
                         <div className="flex flex-col">
                           <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
@@ -106,14 +112,20 @@ export default function Projects() {
             <AnimatedSection key={project.id} delay={index * 0.1}>
               <div className="group relative">
                 <div className="relative border border-gray-200 dark:border-zinc-800 rounded-lg overflow-hidden hover:shadow-sm transition-all duration-300 h-full flex flex-col bg-white dark:bg-zinc-900">
-                  <div className="relative aspect-video overflow-hidden">
-                    <Image
-                      src={project.image || "/placeholder.svg?height=600&width=800"}
-                      alt={project.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
+                <Link
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative aspect-video overflow-hidden block"
+                >
+                  <Image
+                    src={project.image || "/placeholder.svg?height=600&width=800"}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </Link>
+
                   <div className="p-6 flex flex-col flex-grow">
                     <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-2">
                       <Calendar className="h-3 w-3" />
