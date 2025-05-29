@@ -1,53 +1,78 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import { Github, ExternalLink, LaptopMinimal, BookOpen, Clock, Pin, Calendar, ArrowRight } from "lucide-react"
-import StatsCard from "@/components/stats-card"
-import { ThemeToggle } from "@/components/theme-toggle"
-import AnimatedText from "@/components/animated-text"
-import AnimatedSection from "@/components/animated-section"
-import MobileMenu from "@/components/mobile-menu"
-import { useGithubStats } from "@/hooks/github"
-import { blogPosts } from "@/app/blog/posts"
-import { getRecentProjects, formatDate } from "@/lib/projects"
-import { TypeAnimation } from "react-type-animation"
+import Image from "next/image";
+import Link from "next/link";
+import {
+  Github,
+  ExternalLink,
+  LaptopMinimal,
+  BookOpen,
+  Clock,
+  Pin,
+  Calendar,
+  ArrowRight,
+} from "lucide-react";
+import StatsCard from "@/components/stats-card";
+import { ThemeToggle } from "@/components/theme-toggle";
+import AnimatedText from "@/components/animated-text";
+import AnimatedSection from "@/components/animated-section";
+import MobileMenu from "@/components/mobile-menu";
+import { useGithubStats } from "@/hooks/github";
+import { blogPosts } from "@/app/blog/posts";
+import { getRecentProjects, formatDate } from "@/lib/projects";
+import { TypeAnimation } from "react-type-animation";
 
-const posts = Object.values(blogPosts)
+const posts = Object.values(blogPosts);
 
-const sortedPosts = posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+const sortedPosts = posts.sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
 
-const latestPost = sortedPosts[0]
+const latestPost = sortedPosts[0];
 
 export default function Home() {
-  const githubStats = useGithubStats("eumorales")
-  const recentProjects = getRecentProjects(3)
+  const githubStats = useGithubStats("eumorales");
+  const recentProjects = getRecentProjects(3);
 
   return (
     <main className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
       <header className="container mx-auto px-4 py-6 flex justify-between items-center">
-      <Link
-        href="/"
-        className="font-bold text-xl italic text-black dark:text-white"
-      >
-        gilbertomorales.
-      </Link>
-
+        <Link
+          href="/"
+          className="font-bold text-xl italic text-black dark:text-white"
+        >
+          gilbertomorales.
+        </Link>
 
         <nav className="hidden md:flex items-center space-x-6">
-          <Link href="/" className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium">
+          <Link
+            href="/"
+            className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium"
+          >
             Home
           </Link>
-          <Link href="/about" className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium">
+          <Link
+            href="/about"
+            className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium"
+          >
             About
           </Link>
-          <Link href="/blog" className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium">
+          <Link
+            href="/blog"
+            className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium"
+          >
             Blog
           </Link>
-          <Link href="/projects" className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium">
+          <Link
+            href="/projects"
+            className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium"
+          >
             Projects
           </Link>
-          <Link href="/guestbook" className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium">
+          <Link
+            href="/guestbook"
+            className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium"
+          >
             Guestbook
           </Link>
           <ThemeToggle />
@@ -60,7 +85,10 @@ export default function Home() {
       <section className="container mx-auto px-4 py-12 md:py-20 pb-0 md:pb-0 relative mt-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4 md:space-y-6 text-center md:text-left">
-            <AnimatedText text="Gilberto Morales," className="text-4xl sm:text-5xl md:text-6xl font-black" />
+            <AnimatedText
+              text="Gilberto Morales,"
+              className="text-4xl sm:text-5xl md:text-6xl font-black"
+            />
             <div className="text-2xl sm:text-3xl text-gray-500 dark:text-zinc-400 font-light h-[40px] sm:h-[48px] flex items-center md:items-start justify-center md:justify-start">
               <TypeAnimation
                 sequence={[
@@ -78,39 +106,43 @@ export default function Home() {
             </div>
             <AnimatedSection delay={0.4}>
               <p className="text-gray-600 dark:text-zinc-300 max-w-md mx-auto md:mx-0 mt-4 md:mt-6">
-                "I'm a Computer Science student who enjoys fullstack web development, always striving to improve my
-                skills."
+                "I'm a Computer Science student who enjoys fullstack web
+                development, always striving to improve my skills."
               </p>
             </AnimatedSection>
-      
-<AnimatedSection delay={0.6}>
-  <div className="pt-4 pb-16 md:pb-0 flex justify-center md:justify-start">
-    <Link
-      href="/about"
-      className="inline-flex items-center gap-2 border border-black dark:border-white px-4 py-2 rounded-md hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
-    >
-      About Me <ExternalLink className="h-4 w-4" />
-    </Link>
-  </div>
-</AnimatedSection>
-    </div>
-    
-<AnimatedSection delay={0.3} direction="left" className="flex items-start md:items-center">
-  <div className="flex justify-center md:justify-end relative w-full -mt-12 md:-mt-24">
-    <div className="relative md:w-5/6">
-      <Image
-        src="/assets/capa.svg"
-        alt="Gilberto Morales"
-        width={400}
-        height={400}
-        className="w-3/4 sm:w-2/3 md:w-full max-w-none md:max-w-none mx-auto md:mx-0 relative z-10 drop-shadow-lg"
-      />
-    </div>
-  </div>
-</AnimatedSection>
-  </div>
-</section>
-        <section className="container mx-auto px-4 pt-6 pb-16 mt-12">
+
+            <AnimatedSection delay={0.6}>
+              <div className="pt-4 pb-16 md:pb-0 flex justify-center md:justify-start">
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-2 border border-black dark:border-white px-4 py-2 rounded-md hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+                >
+                  About Me <ExternalLink className="h-4 w-4" />
+                </Link>
+              </div>
+            </AnimatedSection>
+          </div>
+
+          <AnimatedSection
+            delay={0.3}
+            direction="left"
+            className="flex items-start md:items-center"
+          >
+            <div className="flex justify-center md:justify-end relative w-full -mt-12 md:-mt-24">
+              <div className="relative md:w-5/6">
+                <Image
+                  src="/assets/capa.svg"
+                  alt="Gilberto Morales"
+                  width={400}
+                  height={400}
+                  className="w-3/4 sm:w-2/3 md:w-full max-w-none md:max-w-none mx-auto md:mx-0 relative z-10 drop-shadow-lg"
+                />
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+      <section className="container mx-auto px-4 pt-6 pb-16 mt-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {githubStats ? (
             <StatsCard
@@ -180,8 +212,8 @@ export default function Home() {
             recentProjects.length === 1
               ? "md:grid-cols-1 max-w-2xl mx-auto"
               : recentProjects.length === 2
-                ? "md:grid-cols-2"
-                : "md:grid-cols-2 lg:grid-cols-3"
+              ? "md:grid-cols-2"
+              : "md:grid-cols-2 lg:grid-cols-3"
           } gap-8`}
         >
           {recentProjects.map((project, index) => (
@@ -190,7 +222,9 @@ export default function Home() {
                 <div className="relative border border-gray-200 dark:border-zinc-800 rounded-lg overflow-hidden hover:shadow-sm transition-all duration-300 h-full flex flex-col bg-white dark:bg-zinc-900">
                   <div className="relative aspect-video overflow-hidden">
                     <Image
-                      src={project.image || "/placeholder.svg?height=600&width=800"}
+                      src={
+                        project.image || "/placeholder.svg?height=600&width=800"
+                      }
                       alt={project.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -199,11 +233,17 @@ export default function Home() {
                   <div className="p-6 flex flex-col flex-grow">
                     <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-2">
                       <Calendar className="h-3 w-3" />
-                      <time dateTime={project.publishedAt.toISOString()}>{formatDate(project.publishedAt)}</time>
+                      <time dateTime={project.publishedAt.toISOString()}>
+                        {formatDate(project.publishedAt)}
+                      </time>
                     </div>
 
-                    <h3 className="text-xl font-bold mb-2 text-black dark:text-white">{project.title}</h3>
-                    <p className="text-gray-600 dark:text-zinc-300 mb-4 flex-grow">{project.description}</p>
+                    <h3 className="text-xl font-bold mb-2 text-black dark:text-white">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-zinc-300 mb-4 flex-grow">
+                      {project.description}
+                    </p>
 
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.technologies.map((tech, idx) => {
@@ -214,7 +254,7 @@ export default function Home() {
                           >
                             {tech}
                           </span>
-                        )
+                        );
                       })}
                     </div>
 
@@ -261,10 +301,10 @@ export default function Home() {
                       latestPost.category === "Article"
                         ? "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
                         : latestPost.category === "How To"
-                          ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
-                          : latestPost.category === "Notes"
-                            ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200"
-                            : "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200"
+                        ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
+                        : latestPost.category === "Notes"
+                        ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200"
+                        : "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200"
                     }`}
                   >
                     {latestPost.category}
@@ -276,7 +316,9 @@ export default function Home() {
                 <h4 className="text-2xl font-bold mb-2 hover:text-gray-700 dark:hover:text-zinc-300">
                   {latestPost.title}
                 </h4>
-                <p className="text-gray-600 dark:text-zinc-300 mb-4">{latestPost.excerpt}</p>
+                <p className="text-gray-600 dark:text-zinc-300 mb-4">
+                  {latestPost.excerpt}
+                </p>
                 <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-zinc-400">
                   <span>{latestPost.date}</span>
                   <div className="flex items-center gap-1">
@@ -351,5 +393,5 @@ export default function Home() {
         </div>
       </footer>
     </main>
-  )
+  );
 }
