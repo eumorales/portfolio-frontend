@@ -5,6 +5,7 @@ import atalhos_de_teclado from "./atalhos-de-teclado";
 import r_contexto_interrupcoes_e_ipc from "./r-contexto-interrupcoes-e-ipc";
 import r_bloqueio_acesso_windows from "./r-bloqueio-acesso-windows";
 import migrando_para_o_mac from "./migrando-para-o-mac";
+import introducao_ao_react from "./introducao-ao-react";
 
 export const blogPosts = {
   [r_concorrencia_e_processos.id]: r_concorrencia_e_processos,
@@ -14,4 +15,5 @@ export const blogPosts = {
   [r_contexto_interrupcoes_e_ipc.id]: r_contexto_interrupcoes_e_ipc,
   [r_bloqueio_acesso_windows.id]: r_bloqueio_acesso_windows,
   [migrando_para_o_mac.id]: migrando_para_o_mac,
+  [introducao_ao_react.id]: introducao_ao_react,
 };

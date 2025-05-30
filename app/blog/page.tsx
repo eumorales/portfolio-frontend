@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import PageHeader from "@/components/page-header"
-import BlogFilter from "./blog-filter"
+import PageHeader from "@/components/page-header";
+import BlogFilter from "./blog-filter";
 
 export default function Blog() {
   return (
@@ -11,5 +11,5 @@ export default function Blog() {
         <BlogFilter />
       </div>
     </main>
-  )
+  );
 }
