@@ -82,7 +82,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="container mx-auto px-4 py-12 md:py-20 pb-0 md:pb-0 relative mt-8">
+      <section className="container mx-auto px-4 py-12 md:py-20 pb-0 md:pb-0 relative mt-8 md:mt-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4 md:space-y-6 text-center md:text-left">
             <AnimatedText
@@ -349,7 +349,7 @@ export default function Home() {
             <div className="flex justify-center gap-8">
               <a
                 href="mailto:eu@gilbertomorales.com"
-                className="transform transition-transform hover:scale-110"
+                className="transform transition-transform hover:scale-110"  
                 aria-label="Email me"
               >
                 <div className="w-16 h-16 flex items-center justify-center">
