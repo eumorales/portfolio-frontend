@@ -221,14 +221,22 @@ export default function Home() {
               <div className="group relative">
                 <div className="relative border border-gray-200 dark:border-zinc-800 rounded-lg overflow-hidden hover:shadow-sm transition-all duration-300 h-full flex flex-col bg-white dark:bg-zinc-900">
                   <div className="relative aspect-video overflow-hidden">
-                    <Image
-                      src={
-                        project.image || "/placeholder.svg?height=600&width=800"
-                      }
-                      alt={project.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+                    <Link
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative aspect-video overflow-hidden block"
+                    >
+                      <Image
+                        src={
+                          project.image ||
+                          "/placeholder.svg?height=600&width=800"
+                        }
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </Link>
                   </div>
                   <div className="p-6 flex flex-col flex-grow">
                     <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-2">
