@@ -297,7 +297,6 @@ export default function BlogFilter() {
                     </div>
                   </div>
 
-                  {/* Idiomas */}
                   <div className="space-y-3">
                     <h3 className="font-medium">Idiomas</h3>
                     <div className="grid grid-cols-2 gap-2">
@@ -329,9 +328,7 @@ export default function BlogFilter() {
           </div>
         </div>
 
-        {/* Filtros selecionados */}
         <div className="flex flex-wrap gap-2">
-          {/* Tags selecionadas */}
           {selectedTags.map((tag) => (
             <Badge
               key={`tag-${tag}`}
@@ -344,7 +341,6 @@ export default function BlogFilter() {
             </Badge>
           ))}
 
-          {/* Categorias selecionadas */}
           {selectedCategories.map((category) => (
             <Badge
               key={`category-${category}`}
@@ -357,7 +353,6 @@ export default function BlogFilter() {
             </Badge>
           ))}
 
-          {/* Idiomas selecionados */}
           {selectedLanguages.map((language) => (
             <Badge
               key={`language-${language}`}
@@ -402,31 +397,30 @@ export default function BlogFilter() {
                   <AnimatedSection key={post.id} delay={index * 0.05}>
                     <Link href={`/blog/${post.id}`}>
                       <div className="group flex items-center gap-3 py-2 px-3 rounded-lg hover:bg-gray-50 dark:hover:bg-zinc-900/50 transition-colors">
-                        {/* Icon based on category */}
+
                         <div className="flex-shrink-0 w-5 h-5 flex items-center justify-center">
                           {post.category === "Article" && (
-                            <div className="w-4 h-4 bg-blue-500 rounded-sm flex items-center justify-center">
-                              <div className="w-2 h-2 bg-white rounded-xs"></div>
+                            <div className="w-4 h-4 bg-blue-300 rounded-sm flex items-center justify-center">
+                              <div className="w-2 h-2 bg-white dark:bg-black rounded-xs"></div>
                             </div>
                           )}
                           {post.category === "How To" && (
-                            <div className="w-4 h-4 bg-green-500 rounded-sm flex items-center justify-center">
-                              <div className="w-2 h-2 bg-white rounded-xs"></div>
+                            <div className="w-4 h-4 bg-green-300 rounded-sm flex items-center justify-center">
+                              <div className="w-2 h-2 bg-white dark:bg-black rounded-xs"></div>
                             </div>
                           )}
                           {post.category === "Notes" && (
-                            <div className="w-4 h-4 bg-yellow-500 rounded-sm flex items-center justify-center">
-                              <div className="w-2 h-2 bg-white rounded-xs"></div>
+                            <div className="w-4 h-4 bg-yellow-300 rounded-sm flex items-center justify-center">
+                              <div className="w-2 h-2 bg-white dark:bg-black rounded-xs"></div>
                             </div>
                           )}
                           {post.category === "List" && (
-                            <div className="w-4 h-4 bg-purple-500 rounded-sm flex items-center justify-center">
-                              <div className="w-2 h-2 bg-white rounded-xs"></div>
+                            <div className="w-4 h-4 bg-purple-300 rounded-sm flex items-center justify-center">
+                              <div className="w-2 h-2 bg-white dark:bg-black rounded-xs"></div>
                             </div>
                           )}
                         </div>
 
-                        {/* Post title and details */}
                         <div className="flex-grow min-w-0">
                           <div className="flex items-center gap-2 mb-1">
                             <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate">
@@ -446,12 +440,13 @@ export default function BlogFilter() {
                               }`}
                             >
                               {post.category}
+
+                              
                             </span>
                           </div>
                           <p className="text-sm text-gray-600 dark:text-gray-400 truncate">{post.excerpt}</p>
                         </div>
 
-                        {/* Date and read time */}
                         <div className="flex-shrink-0 text-right">
                           <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">
                             {new Date(post.date).toLocaleDateString("pt-BR", {

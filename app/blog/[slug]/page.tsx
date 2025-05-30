@@ -25,9 +25,7 @@ const getCategoryColorClass = (category: string) => {
   }
 }
 
-// Make the function async
 export default async function BlogPostPage({ params }: BlogPostParams) {
-  // Await params to resolve the slug
   const { slug } = await params
   const post = blogPosts[slug]
 
