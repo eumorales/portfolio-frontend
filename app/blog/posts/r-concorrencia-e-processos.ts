@@ -62,6 +62,15 @@ const post: BlogPost = {
       <li><strong>V() // ou signal()</strong> → incrementa o valor → pode desbloquear um processo.</li>
       <li>Semáforos podem ser binários (0 ou 1) ou contadores (inteiros positivos).</li>
     </ul>
+    <div class="caixa-codigo" data-lang="C">
+sem_t mutex;
+
+sem_init(&mutex, 0, 1);
+
+sem_wait(&mutex); // entra na seção crítica
+// código da seção crítica
+sem_post(&mutex); // sai da seção crítica
+    </div>
 
     <h2>🔐 5. Seção Crítica</h2>
     <p>Trecho do código que acessa um recurso compartilhado. Apenas um processo ou thread deve executá-lo por vez → <strong>garante consistência</strong>.</p>
@@ -71,10 +80,21 @@ const post: BlogPost = {
       <li><strong>Progresso</strong> → ninguém fica travado sem necessidade.</li>
       <li><strong>Espera limitada</strong> → nenhum processo espera para sempre.</li>
     </ul>
+    <div class="caixa-codigo" data-lang="C">
+// Dois threads incrementando uma variável compartilhada
+contador++;
+
+→ Se não houver controle (exclusão mútua), o valor pode ser alterado incorretamente.
+    </div>
 
     <h2>🛑 6. Starvation</h2>
     <p>Quando um processo ou thread fica esperando indefinidamente por um recurso que nunca é liberado para ele → geralmente por ter prioridade baixa.</p>
     <p><strong>Aging</strong> → técnica que aumenta a prioridade com o tempo de espera, evitando inanição.</p>
+    <div class="caixa-codigo" data-lang="Exemplo">
+Imagine um escalonador por prioridade onde processos de prioridade alta continuam chegando.
+→ Um processo de prioridade baixa pode nunca ser escolhido para execução.
+→ Esse processo sofre starvation.
+    </div>
 
     <h2>🔁 7. Escalonamento</h2>
     <ul>
