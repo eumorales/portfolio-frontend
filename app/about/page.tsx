@@ -4,7 +4,11 @@ import AnimatedSection from "@/components/animated-section"
 import SpotifyStats from "@/components/spotify-stats"
 import TechStack from "@/components/tech-stack"
 import Link from "next/link"
-import { Github, Linkedin, Twitter, Calendar, Building2, Briefcase, GraduationCap, Laptop, Instagram } from "lucide-react"
+import { Github, Calendar, Building2, Briefcase, GraduationCap, Laptop, Instagram } from "lucide-react"
+
+export const metadata = {
+  title: "About | gilbertomorales.com",
+}
 
 const experiences = [
   {
@@ -20,8 +24,7 @@ const experiences = [
     title: "Computer Technician",
     company: "Freelance",
     period: "Present",
-    description:
-      "Assembly and maintenance of hardware and software, and technical support on Windows systems.",
+    description: "Assembly and maintenance of hardware and software, and technical support on Windows systems.",
     skills: ["Hardware", "Software", "Windows", "Linux", "Technical Support"],
     icon: <Laptop className="h-5 w-5" />,
   },
@@ -43,20 +46,12 @@ export default function About() {
         <PageHeader title="About Me" />
 
         <div className="mb-12">
-          
           <div className="flex flex-col md:flex-row gap-8 items-start">
-            
             <div className="w-32 h-32 md:w-40 md:h-40 relative mb-4 md:mb-0">
-              <Image
-                src="/assets/perfil.jpg"
-                alt="Gilberto"
-                fill
-                className="object-cover rounded-full"
-              />
+              <Image src="/assets/perfil.jpg" alt="Gilberto" fill className="object-cover rounded-full" />
             </div>
 
             <div className="flex flex-col">
-              
               <h2 className="text-2xl font-bold mb-1">Gilberto Morales</h2>
               <p className="text-gray-600 dark:text-zinc-300 mb-4">Fullstack Developer</p>
 
@@ -77,24 +72,25 @@ export default function About() {
                 Download CV
               </Link>
             </div>
-      
           </div>
-
         </div>
-      
-
 
         <AnimatedSection className="mb-12">
           <h2 className="text-2xl font-bold mb-6">About</h2>
           <div className="space-y-4 text-gray-600 dark:text-zinc-300">
             <p>
-              Hello! I'm a fullstack developer passionate about building engaging and functional web experiences. My journey with programming began at a young age, sparked by a curiosity to create plugins for games — and that passion has only grown since then.
+              Hello! I'm a fullstack developer passionate about building engaging and functional web experiences. My
+              journey with programming began at a young age, sparked by a curiosity to create plugins for games — and
+              that passion has only grown since then.
             </p>
             <p>
-              Over the years, I’ve developed a strong foundation in technologies like React, HTML, JavaScript, Python, Java, TypeScript, and more. My focus is on writing clean, maintainable code and designing scalable systems that deliver great user experiences.
+              Over the years, I've developed a strong foundation in technologies like React, HTML, JavaScript, Python,
+              Java, TypeScript, and more. My focus is on writing clean, maintainable code and designing scalable systems
+              that deliver great user experiences.
             </p>
             <p>
-              Outside of programming, I enjoy playing volleyball and video games — hobbies that keep me balanced and often inspire fresh ideas for my projects.
+              Outside of programming, I enjoy playing volleyball and video games — hobbies that keep me balanced and
+              often inspire fresh ideas for my projects.
             </p>
           </div>
         </AnimatedSection>

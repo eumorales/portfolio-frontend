@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     ],
   },
   appleWebApp: {
-    title: "Morales",
+    title: "Morales | gilbertomorales.com",
     capable: true,
     statusBarStyle: "default",
   },
