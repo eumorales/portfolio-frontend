@@ -154,19 +154,13 @@ export default function ClientPage() {
 
       <footer className="border-t border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
         <div className="container mx-auto px-4 py-8">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
-            {/* Left side - Copyright */}
-            <div className="text-gray-600 dark:text-zinc-400 text-sm">
-              All work © 2025 Gilberto Morales
-            </div>
-
-            {/* Right side - Links */}
-            <div className="flex mt-4 sm:mt-0">
+          <div className="flex justify-center">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
               <Link
                 href="/sitemap"
-                className="text-gray-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors flex items-center gap-1 text-sm mr-8"
+                className="text-gray-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors flex items-center gap-1 text-sm"
               >
-                Site map
+                Sitemap
                 <ArrowUpRight className="h-3 w-3" />
               </Link>
               <Link
