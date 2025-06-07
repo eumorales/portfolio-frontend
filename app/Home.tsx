@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import AnimatedText from "@/components/animated-text";
 import AnimatedSection from "@/components/animated-section";
@@ -152,9 +152,34 @@ export default function ClientPage() {
         </section>
       </AnimatedSection>
 
-      <footer className="container mx-auto px-4 py-8 bg-white dark:bg-zinc-950 border-t border-gray-200 dark:border-zinc-800">
-        <div className="text-center text-gray-500 dark:text-zinc-400 text-sm">
-          <p>All work © {new Date().getFullYear()} Gilberto Morales</p>
+      <footer className="border-t border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
+        <div className="container mx-auto px-4 py-8">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+            {/* Left side - Copyright */}
+            <div className="text-gray-600 dark:text-zinc-400 text-sm">
+              All work © 2025 Gilberto Morales
+            </div>
+
+            {/* Right side - Links */}
+            <div className="flex mt-4 sm:mt-0">
+              <Link
+                href="/sitemap"
+                className="text-gray-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors flex items-center gap-1 text-sm mr-8"
+              >
+                Site map
+                <ArrowUpRight className="h-3 w-3" />
+              </Link>
+              <Link
+                href="https://github.com/eumorales/eumorales/blob/main/LICENSE"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors flex items-center gap-1 text-sm"
+              >
+                Licence
+                <ArrowUpRight className="h-3 w-3" />
+              </Link>
+            </div>
+          </div>
         </div>
       </footer>
     </main>
