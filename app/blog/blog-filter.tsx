@@ -178,7 +178,7 @@ export default function BlogFilter() {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
             <Input
               type="text"
-              placeholder="Pesquisar publicações..."
+              placeholder="Search posts..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-9 w-full"
@@ -202,7 +202,7 @@ export default function BlogFilter() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56 max-h-[300px] overflow-y-auto">
-                <DropdownMenuLabel>Tags disponíveis</DropdownMenuLabel>
+                <DropdownMenuLabel>Available tags</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 {allTags.map((tag) => (
                   <DropdownMenuCheckboxItem
@@ -220,13 +220,13 @@ export default function BlogFilter() {
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm" className="h-10">
                   <Filter className="h-3.5 w-3.5 mr-2" />
-                  Categorias{" "}
+                  Categories{" "}
                   {selectedCategories.length > 0 &&
                     `(${selectedCategories.length})`}
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56">
-                <DropdownMenuLabel>Categorias disponíveis</DropdownMenuLabel>
+                <DropdownMenuLabel>Available categories</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 {allCategories.map((category) => (
                   <DropdownMenuCheckboxItem
@@ -244,13 +244,13 @@ export default function BlogFilter() {
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm" className="h-10">
                   <Globe className="h-3.5 w-3.5 mr-2" />
-                  Idiomas{" "}
+                  Languages{" "}
                   {selectedLanguages.length > 0 &&
                     `(${selectedLanguages.length})`}
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56">
-                <DropdownMenuLabel>Idiomas disponíveis</DropdownMenuLabel>
+                <DropdownMenuLabel>Available languages</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 {allLanguages.map((language) => (
                   <DropdownMenuCheckboxItem
@@ -272,7 +272,7 @@ export default function BlogFilter() {
                 onClick={clearAllFilters}
               >
                 <X className="h-3.5 w-3.5 mr-2" />
-                Limpar filtros
+                Clear filters
               </Button>
             )}
           </div>
@@ -282,14 +282,14 @@ export default function BlogFilter() {
               <SheetTrigger asChild>
                 <Button variant="outline" className="w-full">
                   <SlidersHorizontal className="h-4 w-4 mr-2" />
-                  Filtros {activeFiltersCount > 0 && `(${activeFiltersCount})`}
+                  Filters {activeFiltersCount > 0 && `(${activeFiltersCount})`}
                 </Button>
               </SheetTrigger>
               <SheetContent side="bottom" className="h-[80vh]">
                 <SheetHeader>
-                  <SheetTitle>Filtros</SheetTitle>
+                  <SheetTitle>Filters</SheetTitle>
                   <SheetDescription>
-                    Filtre os posts por tags, categorias e idiomas
+                    Filter posts by tags, categories and languages
                   </SheetDescription>
                 </SheetHeader>
                 <div className="py-6 space-y-6">
@@ -312,7 +312,7 @@ export default function BlogFilter() {
                   </div>
 
                   <div className="space-y-3">
-                    <h3 className="font-medium">Categorias</h3>
+                    <h3 className="font-medium">Categories</h3>
                     <div className="grid grid-cols-2 gap-2">
                       {allCategories.map((category) => (
                         <div
@@ -336,7 +336,7 @@ export default function BlogFilter() {
                   </div>
 
                   <div className="space-y-3">
-                    <h3 className="font-medium">Idiomas</h3>
+                    <h3 className="font-medium">Languages</h3>
                     <div className="grid grid-cols-2 gap-2">
                       {allLanguages.map((language) => (
                         <div
@@ -361,10 +361,10 @@ export default function BlogFilter() {
                 </div>
                 <SheetFooter>
                   <Button variant="outline" onClick={clearAllFilters}>
-                    Limpar filtros
+                    Clear filters
                   </Button>
                   <SheetClose asChild>
-                    <Button>Aplicar filtros</Button>
+                    <Button>Apply filters</Button>
                   </SheetClose>
                 </SheetFooter>
               </SheetContent>
@@ -416,21 +416,19 @@ export default function BlogFilter() {
         {activeFiltersCount > 0 && (
           <div className="text-sm text-gray-500 dark:text-gray-400">
             {filteredPosts.length}{" "}
-            {filteredPosts.length === 1
-              ? "post encontrado"
-              : "posts encontrados"}
+            {filteredPosts.length === 1 ? "post found" : "posts found"}
           </div>
         )}
       </div>
 
       {filteredPosts.length === 0 ? (
         <div className="text-center py-12">
-          <h3 className="text-xl font-semibold mb-2">Nenhum post encontrado</h3>
+          <h3 className="text-xl font-semibold mb-2">No posts found</h3>
           <p className="text-gray-500 dark:text-gray-400">
-            Tente ajustar seus filtros para encontrar o que está procurando.
+            Try adjusting your filters to find what you're looking for.
           </p>
           <Button variant="outline" className="mt-4" onClick={clearAllFilters}>
-            Limpar todos os filtros
+            Clear all filters
           </Button>
         </div>
       ) : (
