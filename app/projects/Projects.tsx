@@ -1,15 +1,19 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Github, ArrowRight, Calendar } from "lucide-react"
-import AnimatedSection from "@/components/animated-section"
-import PageHeader from "@/components/page-header"
-import Image from "next/image"
-import { getFeaturedProjects, getNonFeaturedProjects, formatDate } from "@/lib/projects"
+import Link from "next/link";
+import { Github, ArrowRight, Calendar } from "lucide-react";
+import AnimatedSection from "@/components/animated-section";
+import PageHeader from "@/components/page-header";
+import Image from "next/image";
+import {
+  getFeaturedProjects,
+  getNonFeaturedProjects,
+  formatDate,
+} from "@/lib/projects";
 
 function Projects() {
-  const featuredProjects = getFeaturedProjects()
-  const otherProjects = getNonFeaturedProjects()
+  const featuredProjects = getFeaturedProjects();
+  const otherProjects = getNonFeaturedProjects();
 
   return (
     <main className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
@@ -38,7 +42,11 @@ function Projects() {
                           className="relative aspect-video rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300 block"
                         >
                           <Image
-                            src={project.image || "/placeholder.svg?height=600&width=800" || "/placeholder.svg"}
+                            src={
+                              project.image ||
+                              "/placeholder.svg?height=600&width=800" ||
+                              "/placeholder.svg"
+                            }
                             alt={project.title}
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -48,7 +56,9 @@ function Projects() {
                         <div className="flex flex-col">
                           <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
                             <Calendar className="h-4 w-4" />
-                            <time dateTime={project.publishedAt.toISOString()}>{formatDate(project.publishedAt)}</time>
+                            <time dateTime={project.publishedAt.toISOString()}>
+                              {formatDate(project.publishedAt)}
+                            </time>
                           </div>
 
                           <h3 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400">
@@ -67,7 +77,7 @@ function Projects() {
                                 >
                                   {tech}
                                 </span>
-                              )
+                              );
                             })}
                           </div>
 
@@ -102,7 +112,9 @@ function Projects() {
         )}
 
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl font-bold text-black dark:text-white">Other Projects</h2>
+          <h2 className="text-2xl font-bold text-black dark:text-white">
+            All Projects
+          </h2>
           <div className="hidden md:block h-px bg-gray-200 dark:bg-zinc-800 flex-grow ml-6 mr-6" />
         </div>
 
@@ -118,7 +130,9 @@ function Projects() {
                     className="relative aspect-video overflow-hidden block"
                   >
                     <Image
-                      src={project.image || "/placeholder.svg?height=600&width=800"}
+                      src={
+                        project.image || "/placeholder.svg?height=600&width=800"
+                      }
                       alt={project.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -128,11 +142,17 @@ function Projects() {
                   <div className="p-6 flex flex-col flex-grow">
                     <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-2">
                       <Calendar className="h-3 w-3" />
-                      <time dateTime={project.publishedAt.toISOString()}>{formatDate(project.publishedAt)}</time>
+                      <time dateTime={project.publishedAt.toISOString()}>
+                        {formatDate(project.publishedAt)}
+                      </time>
                     </div>
 
-                    <h3 className="text-xl font-bold mb-2 text-black dark:text-white">{project.title}</h3>
-                    <p className="text-gray-600 dark:text-zinc-300 mb-4 flex-grow">{project.description}</p>
+                    <h3 className="text-xl font-bold mb-2 text-black dark:text-white">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-zinc-300 mb-4 flex-grow">
+                      {project.description}
+                    </p>
 
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.technologies.map((tech, idx) => {
@@ -143,7 +163,7 @@ function Projects() {
                           >
                             {tech}
                           </span>
-                        )
+                        );
                       })}
                     </div>
 
@@ -175,7 +195,7 @@ function Projects() {
         </div>
       </div>
     </main>
-  )
+  );
 }
 
-export default Projects
+export default Projects;

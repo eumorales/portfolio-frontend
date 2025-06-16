@@ -1,25 +1,25 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Copy, Check } from "lucide-react"
+import { useState } from "react";
+import { Copy, Check } from "lucide-react";
 
 export default function DiscordCard() {
-  const [copied, setCopied] = useState(false)
-  const discordUsername = "moralesdisc"
+  const [copied, setCopied] = useState(false);
+  const discordUsername = "moralesdisc";
 
   const copyDiscord = async () => {
     try {
-      await navigator.clipboard.writeText(discordUsername)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      await navigator.clipboard.writeText(discordUsername);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error("Failed to copy:", err)
+      console.error("Failed to copy:", err);
     }
-  }
+  };
 
   return (
     <div
-      className="bg-indigo-100 dark:bg-indigo-900/30 rounded-xl p-5 cursor-pointer hover:bg-indigo-200 dark:hover:bg-indigo-900/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg group"
+      className="bg-indigo-100 dark:bg-indigo-900/30 rounded-xl p-5 cursor-pointer hover:bg-indigo-200 dark:hover:bg-indigo-900/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg group border border-indigo-200/50 dark:border-indigo-700/50 shadow-lg"
       onClick={copyDiscord}
     >
       <div className="flex items-center justify-between mb-3">
@@ -49,5 +49,5 @@ export default function DiscordCard() {
         </p>
       </div>
     </div>
-  )
+  );
 }
