@@ -10,6 +10,9 @@ import MobileMenu from "@/components/mobile-menu";
 import { blogPosts } from "@/app/blog/posts";
 import { getRecentProjects } from "@/lib/projects";
 import { TypeAnimation } from "react-type-animation";
+import ProjectModal from "@/components/project-modal";
+import { useState } from "react";
+import type { Project } from "@/types/project";
 
 import DiscordCard from "@/components/discord-card";
 import EducationCard from "@/components/education-card";
@@ -26,6 +29,14 @@ const latestPost = sortedPosts[0];
 
 export default function ClientPage() {
   const recentProjects = getRecentProjects(1);
+
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleProjectClick = (project: Project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
 
   return (
     <main className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
@@ -142,7 +153,10 @@ export default function ClientPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <GitHubCard />
             {recentProjects.length > 0 && (
-              <LatestProjectCard project={recentProjects[0]} />
+              <LatestProjectCard
+                project={recentProjects[0]}
+                onProjectClick={handleProjectClick}
+              />
             )}
             {latestPost && <LatestPostCard post={latestPost} />}
             <EducationCard />
@@ -176,6 +190,11 @@ export default function ClientPage() {
           </div>
         </div>
       </footer>
+      <ProjectModal
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </main>
   );
 }
