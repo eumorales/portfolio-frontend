@@ -39,8 +39,8 @@ export default function ClientPage() {
   };
 
   return (
-    <main className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
-      <header className="container mx-auto px-4 py-6 flex justify-between items-center bg-white dark:bg-zinc-950">
+    <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
+      <header className="container mx-auto px-4 py-6 flex justify-between items-center bg-white dark:bg-black">
         <Link
           href="/"
           className="font-bold text-xl italic text-black dark:text-white"
@@ -51,31 +51,31 @@ export default function ClientPage() {
         <nav className="hidden md:flex items-center space-x-6">
           <Link
             href="/"
-            className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium"
+            className="hover:text-gray-600 dark:hover:text-gray-300 font-medium"
           >
             Home
           </Link>
           <Link
             href="/about"
-            className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium"
+            className="hover:text-gray-600 dark:hover:text-gray-300 font-medium"
           >
             About
           </Link>
           <Link
             href="/blog"
-            className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium"
+            className="hover:text-gray-600 dark:hover:text-gray-300 font-medium"
           >
             Blog
           </Link>
           <Link
             href="/projects"
-            className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium"
+            className="hover:text-gray-600 dark:hover:text-gray-300 font-medium"
           >
             Projects
           </Link>
           <Link
             href="/guestbook"
-            className="hover:text-gray-600 dark:hover:text-zinc-300 font-medium"
+            className="hover:text-gray-600 dark:hover:text-gray-300 font-medium"
           >
             Guestbook
           </Link>
@@ -87,14 +87,14 @@ export default function ClientPage() {
         </div>
       </header>
 
-      <section className="container mx-auto px-4 py-12 md:py-20 pb-0 md:pb-0 relative mb-12 mt-8 md:mt-20 bg-white dark:bg-zinc-950">
+      <section className="container mx-auto px-4 py-6 md:py-10 pb-8 md:pb-12 relative bg-white dark:bg-black">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-4 md:space-y-6 text-center md:text-left">
+          <div className="space-y-4 md:space-y-5 text-center md:text-left">
             <AnimatedText
               text="Gilberto Morales,"
               className="text-4xl sm:text-5xl md:text-6xl font-black"
             />
-            <div className="text-2xl sm:text-3xl text-gray-500 dark:text-zinc-400 font-light h-[40px] sm:h-[48px] flex items-center md:items-start justify-center md:justify-start">
+            <div className="text-2xl sm:text-3xl text-gray-500 dark:text-gray-400 font-light h-[40px] sm:h-[48px] flex items-center md:items-start justify-center md:justify-start">
               <TypeAnimation
                 sequence={[
                   "Fullstack Developer",
@@ -110,14 +110,14 @@ export default function ClientPage() {
               />
             </div>
             <AnimatedSection delay={0.4}>
-              <p className="text-gray-600 dark:text-zinc-300 max-w-md mx-auto md:mx-0 mt-4 md:mt-6">
+              <p className="text-gray-600 dark:text-gray-300 max-w-md mx-auto md:mx-0 mt-4 md:mt-5">
                 "I'm a Computer Science student who enjoys fullstack web
                 development, always striving to improve my skills."
               </p>
             </AnimatedSection>
 
             <AnimatedSection delay={0.6}>
-              <div className="pt-4 pb-16 md:pb-0 flex justify-center md:justify-start">
+              <div className="pt-5 pb-8 md:pb-0 flex justify-center md:justify-start">
                 <Link
                   href="/about"
                   className="inline-flex items-center gap-2 border border-black dark:border-white px-4 py-2 rounded-md hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
@@ -131,25 +131,41 @@ export default function ClientPage() {
           <AnimatedSection
             delay={0.3}
             direction="left"
-            className="flex items-start md:items-center"
+            className="flex items-center justify-center"
           >
-            <div className="flex justify-center md:justify-end relative w-full -mt-12 md:-mt-24">
-              <div className="relative md:w-5/6">
-                <Image
-                  src="/assets/capa.svg"
-                  alt="Gilberto Morales"
-                  width={400}
-                  height={400}
-                  className="w-3/4 sm:w-2/3 md:w-full max-w-none mx-auto md:mx-0 relative z-10 drop-shadow-lg"
-                />
-              </div>
+            <div className="relative w-full max-w-[320px] md:max-w-[400px] mx-auto overflow-hidden rounded-lg">
+              {/* Light mode image */}
+              <Image
+                src="/assets/hero.png"
+                alt="Gilberto Morales - ASCII Art"
+                width={400}
+                height={350}
+                className="w-full relative z-10 object-cover object-top 
+                          transition-all duration-700 ease-out
+                          dark:opacity-0 dark:scale-110 dark:blur-sm dark:pointer-events-none
+                          opacity-100 scale-100 blur-0"
+                style={{ imageRendering: "pixelated" }}
+              />
+
+              {/* Dark mode image */}
+              <Image
+                src="/assets/hero-dark.png"
+                alt="Gilberto Morales - ASCII Art Dark"
+                width={400}
+                height={350}
+                className="w-full absolute top-0 left-0 z-10 object-cover object-top 
+                          transition-all duration-700 ease-out
+                          opacity-0 scale-90 blur-sm pointer-events-none
+                          dark:opacity-100 dark:scale-100 dark:blur-0 dark:pointer-events-auto"
+                style={{ imageRendering: "pixelated" }}
+              />
             </div>
           </AnimatedSection>
         </div>
       </section>
 
       <AnimatedSection delay={0.6}>
-        <section className="container mx-auto px-4 py-12 md:py-20">
+        <section className="container mx-auto px-4 py-8 md:py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <GitHubCard />
             {recentProjects.length > 0 && (
@@ -166,13 +182,13 @@ export default function ClientPage() {
         </section>
       </AnimatedSection>
 
-      <footer className="border-t border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
+      <footer className="border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-black">
         <div className="container mx-auto px-4 py-8">
           <div className="flex justify-center">
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
               <Link
                 href="/sitemap"
-                className="text-gray-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors flex items-center gap-1 text-sm"
+                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors flex items-center gap-1 text-sm"
               >
                 Sitemap
                 <ArrowUpRight className="h-3 w-3" />
@@ -181,7 +197,7 @@ export default function ClientPage() {
                 href="https://github.com/eumorales/eumorales/blob/main/LICENSE"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors flex items-center gap-1 text-sm"
+                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors flex items-center gap-1 text-sm"
               >
                 Licence
                 <ArrowUpRight className="h-3 w-3" />
