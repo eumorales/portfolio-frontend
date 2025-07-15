@@ -40,7 +40,7 @@ export default function ClientPage() {
 
   return (
     <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
-      <header className="container mx-auto px-4 py-6 flex justify-between items-center bg-white dark:bg-black">
+      <header className="container py-6 flex justify-between items-center bg-white dark:bg-black">
         <Link
           href="/"
           className="font-bold text-xl italic text-black dark:text-white"
@@ -87,7 +87,7 @@ export default function ClientPage() {
         </div>
       </header>
 
-      <section className="container mx-auto px-4 py-6 md:py-10 pb-8 md:pb-12 relative bg-white dark:bg-black">
+      <section className="container py-6 md:py-10 pb-8 md:pb-12 relative bg-white dark:bg-black">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4 md:space-y-5 text-center md:text-left">
             <AnimatedText
@@ -141,9 +141,9 @@ export default function ClientPage() {
                 width={400}
                 height={350}
                 className="w-full relative z-10 object-cover object-top 
-                          transition-all duration-700 ease-out
-                          dark:opacity-0 dark:scale-110 dark:blur-sm dark:pointer-events-none
-                          opacity-100 scale-100 blur-0"
+                        transition-all duration-700 ease-out
+                        dark:opacity-0 dark:scale-110 dark:blur-sm dark:pointer-events-none
+                        opacity-100 scale-100 blur-0"
                 style={{ imageRendering: "pixelated" }}
               />
 
@@ -154,9 +154,9 @@ export default function ClientPage() {
                 width={400}
                 height={350}
                 className="w-full absolute top-0 left-0 z-10 object-cover object-top 
-                          transition-all duration-700 ease-out
-                          opacity-0 scale-90 blur-sm pointer-events-none
-                          dark:opacity-100 dark:scale-100 dark:blur-0 dark:pointer-events-auto"
+                        transition-all duration-700 ease-out
+                        opacity-0 scale-90 blur-sm pointer-events-none
+                        dark:opacity-100 dark:scale-100 dark:blur-0 dark:pointer-events-auto"
                 style={{ imageRendering: "pixelated" }}
               />
             </div>
@@ -165,7 +165,7 @@ export default function ClientPage() {
       </section>
 
       <AnimatedSection delay={0.6}>
-        <section className="container mx-auto px-4 py-8 md:py-12">
+        <section className="container py-8 md:py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <GitHubCard />
             {recentProjects.length > 0 && (
@@ -183,9 +183,9 @@ export default function ClientPage() {
       </AnimatedSection>
 
       <footer className="border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-black">
-        <div className="container mx-auto px-4 py-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
           <div className="flex justify-center">
-            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
+            <div className="flex items-center gap-6 sm:gap-8">
               <Link
                 href="/sitemap"
                 className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors flex items-center gap-1 text-sm"

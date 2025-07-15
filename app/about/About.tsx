@@ -16,7 +16,7 @@ import {
   Laptop,
   Instagram,
 } from "lucide-react";
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 
 interface Experience {
   title: string;
@@ -60,7 +60,7 @@ const experiences: Experience[] = [
 export default function About() {
   return (
     <main className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white scroll-smooth">
-      <div className="container max-w-4xl mx-auto px-4 py-16">
+      <div className="container py-16">
         <PageHeader title="About Me" />
 
         <div className="mb-12">
@@ -110,7 +110,7 @@ export default function About() {
 
         <AnimatedSection className="mb-12">
           <h2 className="text-2xl font-bold mb-6">About</h2>
-          <div className="space-y-4 text-gray-600 dark:text-zinc-300">
+          <div className="space-y-4 text-gray-600 dark:text-zinc-300 max-w-prose break-words">
             <p>
               Hello! I'm a fullstack developer passionate about building
               engaging and functional web experiences. My journey with

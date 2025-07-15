@@ -35,7 +35,7 @@ export default async function BlogPostPage({ params }: BlogPostParams) {
 
   return (
     <main className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container py-16">
         <Link href="/blog" className="inline-flex items-center gap-2 mb-8 hover:underline">
           <ArrowLeft className="h-4 w-4" /> Back to blog
         </Link>

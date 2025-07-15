@@ -1,17 +1,16 @@
-"use client";
+"use client"
 
-import { LinkIcon, ExternalLink } from "lucide-react";
-import Link from "next/link";
-import PageHeader from "@/components/page-header";
-import AnimatedSection from "@/components/animated-section";
-import { blogPosts } from "@/app/blog/posts";
+import { LinkIcon, ExternalLink } from "lucide-react"
+import Link from "next/link"
+import PageHeader from "@/components/page-header"
+import AnimatedSection from "@/components/animated-section"
+import { blogPosts } from "@/app/blog/posts"
 
 const siteStructure = [
   {
     url: "/",
     title: "Home",
-    description:
-      "Personal portfolio showcasing projects and skills as a fullstack developer",
+    description: "Personal portfolio showcasing projects and skills as a fullstack developer",
   },
   {
     url: "/about",
@@ -22,14 +21,12 @@ const siteStructure = [
   {
     url: "/projects",
     title: "Projects",
-    description:
-      "Explore my featured and other development projects with descriptions, technologies used, and links",
+    description: "Explore my featured and other development projects with descriptions, technologies used, and links",
   },
   {
     url: "/blog",
     title: "Blog",
-    description:
-      "Articles, tutorials, and notes on web development, programming, and computer science topics",
+    description: "Articles, tutorials, and notes on web development, programming, and computer science topics",
     children: Object.values(blogPosts).map((post) => ({
       url: `/blog/${post.id}`,
       title: post.title,
@@ -39,8 +36,7 @@ const siteStructure = [
   {
     url: "/guestbook",
     title: "Guestbook",
-    description:
-      "Leave a comment, share your feedback, or just say hi! Log in with GitHub to post a message",
+    description: "Leave a comment, share your feedback, or just say hi! Log in with GitHub to post a message",
   },
   {
     url: "/sitemap",
@@ -53,20 +49,19 @@ const siteStructure = [
     description: "XML version of the sitemap for search engines",
     isExternal: true,
   },
-];
+]
 
 export default function Sitemap() {
-  const baseUrl = "https://gilbertomorales.com";
+  const baseUrl = "https://gilbertomorales.com"
 
   return (
     <main className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
-      <div className="container max-w-4xl mx-auto px-4 py-16">
+      <div className="container py-16">
         <PageHeader title="Sitemap" />
 
         <AnimatedSection className="mb-8">
           <p className="text-gray-600 dark:text-zinc-300 mb-6 text-lg">
-            This page helps you navigate through the website and find the
-            content you're looking for.
+            This page helps you navigate through the website and find the content you're looking for.
           </p>
 
           <div className="flex items-center gap-3 mb-8 text-sm text-gray-500 dark:text-zinc-400 border-l-4 border-gray-200 dark:border-zinc-700 pl-4 py-2">
@@ -90,9 +85,7 @@ export default function Sitemap() {
                   <LinkIcon className="h-5 w-5 mt-1 text-gray-400 dark:text-gray-500 flex-shrink-0" />
                   <div className="flex-grow">
                     <Link
-                      href={
-                        page.isExternal ? `${baseUrl}${page.url}` : page.url
-                      }
+                      href={page.isExternal ? `${baseUrl}${page.url}` : page.url}
                       target={page.isExternal ? "_blank" : undefined}
                       rel={page.isExternal ? "noopener noreferrer" : undefined}
                       className="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1"
@@ -128,5 +121,5 @@ export default function Sitemap() {
         </div>
       </div>
     </main>
-  );
+  )
 }

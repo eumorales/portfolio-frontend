@@ -45,6 +45,7 @@ export const metadata: Metadata = {
     capable: true,
     statusBarStyle: "default",
   },
+    generator: 'v0.dev'
 };
 
 export default function RootLayout({
