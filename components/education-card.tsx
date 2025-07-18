@@ -30,7 +30,7 @@ export default function EducationCard() {
             <p className="text-xs text-gray-500 dark:text-zinc-400 uppercase">
               SEMESTER
             </p>
-            <p className="font-bold">5th</p>
+            <p className="font-bold">6th</p>
           </div>
           <div className="bg-gray-50 dark:bg-zinc-700/50 p-3 rounded group-hover:bg-blue-50 dark:group-hover:bg-blue-900/20 transition-colors duration-300">
             <p className="text-xs text-gray-500 dark:text-zinc-400 uppercase">
