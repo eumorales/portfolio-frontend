@@ -22,7 +22,7 @@ export default function ExperienceCard() {
             <p className="text-xs text-gray-500 dark:text-zinc-400 uppercase">
               YEARS
             </p>
-            <p className="font-bold">3+</p>
+            <p className="font-bold">4+</p>
           </div>
           <div className="bg-gray-50 dark:bg-zinc-700/50 p-3 rounded group-hover:bg-purple-50 dark:group-hover:bg-purple-900/20 transition-colors duration-300">
             <p className="text-xs text-gray-500 dark:text-zinc-400 uppercase">
