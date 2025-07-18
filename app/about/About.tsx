@@ -110,7 +110,7 @@ export default function About() {
 
         <AnimatedSection className="mb-12">
           <h2 className="text-2xl font-bold mb-6">About</h2>
-          <div className="space-y-4 text-gray-600 dark:text-zinc-300 max-w-prose break-words">
+          <div className="space-y-4 text-gray-600 dark:text-zinc-300 break-words">
             <p>
               Hello! I'm a fullstack developer passionate about building
               engaging and functional web experiences. My journey with
@@ -131,10 +131,10 @@ export default function About() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection className="mb-12">
+        {/* <AnimatedSection className="mb-12">
           <h2 className="text-2xl font-bold mb-6">Spotify Stats</h2>
           <SpotifyStats />
-        </AnimatedSection>
+        </AnimatedSection> */}
 
         <AnimatedSection className="mb-12">
           <h2 className="text-2xl font-bold mb-6">Technologies</h2>
